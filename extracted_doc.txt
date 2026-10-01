@@ -1,0 +1,3696 @@
+ABSTRACT
+The Online Learning Management System (LMS) is a comprehensive web-based educational platform developed to simplify and automate academic activities within educational institutions. With the rapid growth of digital learning and online education, there is an increasing need for an efficient system that enables students, teachers, and administrators to interact through a centralized platform. Traditional methods of managing courses, assignments, attendance, examinations, and academic records involve significant manual effort, paperwork, and time consumption. These challenges often result in data redundancy, communication delays, and difficulties in tracking student performance. The proposed Online Learning Management System addresses these issues by providing a secure, user-friendly, and efficient digital learning environment.
+The system is designed using Python Flask as the backend framework, SQLite as the database management system, and HTML, CSS, and JavaScript for the frontend user interface. The platform supports multiple user roles, including students, teachers, and administrators. Students can register and log in to the system, browse available courses, enroll in courses, access study materials, submit assignments, attend quizzes, monitor attendance records, view academic progress, apply for leave, and download course completion certificates. Teachers can create and manage courses, upload study materials, prepare assignments and quizzes, monitor student performance, maintain attendance records, send notifications, and manage academic events. Administrators are provided with tools to manage users, courses, and system activities while ensuring smooth operation of the platform.
+One of the key features of the system is its centralized database architecture, which allows all academic information to be stored and retrieved efficiently. The course management module enables teachers to organize learning resources and make them accessible to students at any time. The assignment management module facilitates online submission and evaluation of assignments, reducing paperwork and improving accessibility. The quiz management module allows teachers to conduct assessments digitally and automatically evaluate student performance. Attendance management and progress tracking modules help students and teachers monitor academic achievements effectively. In addition, the notification system and academic calendar improve communication by informing users about important academic events, deadlines, examinations, and announcements.
+The project also includes a certificate generation module that automatically generates digital certificates for students who successfully complete their courses and assessments. This feature reduces manual effort and ensures quick delivery of certificates. Furthermore, the system incorporates leave management and profile management functionalities, allowing students to update personal information and submit leave requests online. These integrated features contribute to a more organized and efficient educational environment.
+The Online Learning Management System offers numerous benefits, including improved accessibility, reduced administrative workload, enhanced communication, secure data management, and better monitoring of student performance. By integrating multiple academic functions into a single platform, the system supports both teaching and learning processes while promoting digital transformation in education. The developed system demonstrates how modern web technologies can be effectively utilized to create a scalable and reliable learning environment that meets the evolving needs of educational institutions.
+The proposed system is highly flexible and can be adapted to various educational environments such as schools, colleges, universities, and training institutes. The platform supports continuous learning by providing students with access to academic resources at any time and from any location. The integration of digital learning tools enhances student engagement and encourages self-paced learning. The system also improves transparency by allowing students to monitor their academic performance and progress regularly. Through automation of routine academic tasks, educational institutions can reduce operational costs and improve overall productivity. The scalable architecture of the system enables future enhancements and integration with emerging educational technologies. Thus, the Online Learning Management System serves as a reliable and effective solution for modern digital education.
+Table of Contents
+CHAPTER NO
+TITLE
+PAGE NO
+ABSTRACT
+1
+1
+INTRODUCTION
+5
+1.1
+Project Domain
+5
+1.2
+Objective of the project
+6
+1.3
+Scope of the project
+7
+2
+LITERATURE REVIEW
+9
+2.1
+English Course Online Learning System Design based on MVC
+9
+2.2
+Moodle – Open Source Learning Management System
+10
+2.3
+Web-Based Learning Management System for Educational Institutions
+12
+2.4
+E-Learning Management System using Cloud Computing
+14
+2.5
+Smart Learning Management System with Student Performance Analysis
+15
+3
+PROBLEM IDENTIFICATION 
+17
+3.1
+Problem Idenitification
+17
+3.2
+Objective
+18
+3.3
+Methodology
+19
+3.4
+Plan of Experiments
+22
+3.5
+Theoretical Background
+28
+4
+SYSTEM IMPLEMENTATION
+32
+4.1
+System Architecture
+32
+4.2
+User Authentication
+34
+4.3
+Course Management
+36
+4.4
+Assignment Management
+37
+4.5
+Quiz Management
+39
+4.6
+Attendance Management
+41
+4.7
+Progress Tracking
+42
+4.8
+Database Design
+43
+4.9
+Testing and Validation
+44
+5
+RESULTS AND DISCUSSION
+45
+5.1
+Experimental Results
+45
+5.2
+Testing Methods
+45
+5.3
+Discussion
+46
+6
+CONCLUSION AND FUTURE ENHANCEMENTS
+47
+6.1
+Conclusion
+47
+6.2
+Future Enhancements
+48
+REFERENCE
+49
+ANNEXURE I
+SOURCE CODE
+50
+[Heading1] CHAPTER 1
+[Heading1] INTRODUCTION
+[Heading1] 1.1 Project Domain
+[pdq2pgselectionanchorcontainer] The Online Learning Management System (LMS) belongs to the domain of Educational Technology (EdTech) and Web-Based Application Development. Educational Technology focuses on the use of modern digital technologies to enhance teaching, learning, and academic management processes. With the rapid growth of internet connectivity and digital transformation, educational institutions are increasingly adopting online platforms to provide efficient learning experiences and improve administrative operations. Learning Management Systems have become an essential component of modern education by enabling institutions to manage academic activities through a centralized digital platform.
+[NormalWeb] The Online Learning Management System is designed to support students, teachers, and administrators by providing a unified environment for academic interaction. The system enables students to access learning materials, enroll in courses, submit assignments, attend quizzes, track attendance, and monitor their academic progress. Teachers can manage courses, upload study materials, conduct assessments, and communicate important information to students. Administrators can supervise and maintain the overall system, ensuring smooth operation and effective management of academic records.
+[NormalWeb] This project combines concepts from multiple technological domains, including web development, database management, user authentication, and educational information systems. The frontend of the application is developed using HTML, CSS, and JavaScript to create an interactive and user-friendly interface. The backend is developed using Python Flask, which handles application logic, user requests, and communication with the database. SQLite is used as the database management system to store and manage academic data securely and efficiently.
+[NormalWeb] The project domain also involves digital learning and e-learning solutions that support remote and self-paced education. The increasing demand for online education has highlighted the need for systems that provide accessibility, flexibility, and effective communication between learners and educators. The LMS addresses these requirements by offering an integrated platform where educational activities can be performed anytime and anywhere through an internet connection.
+[NormalWeb] Furthermore, the project contributes to the digital transformation of educational institutions by reducing paperwork, minimizing manual errors, improving record management, and enhancing productivity. By integrating academic management functions such as course enrollment, assignment submission, quiz evaluation, attendance tracking, notifications, academic calendars, and certificate generation, the system provides a comprehensive solution for modern educational environments. Therefore, the Online Learning Management System represents an important application within the Educational Technology and Web Application Development domain, supporting efficient and technology-driven learning experiences.
+[Heading1] 1.2 Objective of the Project
+[NormalWeb] The primary objective of the Online Learning Management System (LMS) is to develop a centralized, secure, and user-friendly platform that simplifies and automates academic activities within educational institutions. The system aims to enhance the learning experience by providing students, teachers, and administrators with a common platform for managing educational resources and academic information efficiently. The project focuses on reducing manual work, improving communication, and ensuring easy access to learning materials and academic records.
+[NormalWeb] The Online Learning Management System is designed to provide students with a convenient environment where they can register, enroll in courses, access study materials, submit assignments, attend online quizzes, view attendance records, track academic progress, and download certificates. By offering these facilities through a web-based platform, the system enables students to learn anytime and anywhere, thereby supporting flexible and self-paced learning.
+[NormalWeb] Another important objective of the project is to assist teachers in managing academic activities effectively. The system allows teachers to create and manage courses, upload study materials, prepare assignments, conduct quizzes, maintain attendance records, and monitor student performance. This helps teachers organize educational content efficiently and provide timely feedback to students.
+[NormalWeb] The project also aims to support administrators in managing the overall educational environment. Administrators can maintain user records, monitor system activities, manage courses, and ensure the smooth functioning of the platform. The centralized database structure helps in maintaining accurate records and simplifies data management processes.
+[NormalWeb] Furthermore, the system seeks to improve communication among students, teachers, and administrators through notifications and academic calendar features. These modules help users stay informed about important announcements, deadlines, examinations, and academic events. The project also includes automated certificate generation, which reduces manual effort and provides students with immediate recognition of their achievements.
+[NormalWeb] Overall, the objective of the Online Learning Management System is to create a modern digital learning environment that enhances educational efficiency, improves accessibility, minimizes paperwork, ensures secure data management, and supports the digital transformation of educational institutions. The system serves as a comprehensive solution for managing academic activities in a structured and efficient manner.
+[Heading1] 1.3 Scope of the Project
+[NormalWeb] The scope of the Online Learning Management System (LMS) is to provide a comprehensive digital platform for managing and supporting various academic activities within educational institutions. The system is designed to serve students, teachers, and administrators by offering a centralized environment where educational resources and academic information can be accessed, managed, and monitored efficiently. The project aims to eliminate the limitations of traditional manual systems by introducing a secure and automated online learning environment.
+[NormalWeb] The system allows students to perform various academic activities such as registration, login, course enrollment, assignment submission, quiz participation, attendance tracking, progress monitoring, leave application, and certificate downloading. These features help students access learning resources and academic information from any location at any time, thereby promoting flexibility and convenience in the learning process.
+[NormalWeb] For teachers, the system provides functionalities to create and manage courses, upload study materials, prepare assignments, conduct quizzes, manage attendance records, send notifications, and monitor student performance. These capabilities enable teachers to organize academic content effectively and maintain continuous interaction with students. The system also simplifies the evaluation process by maintaining digital records of assignments and quiz results.
+[NormalWeb] The project further supports administrative activities by providing tools for managing users, maintaining course information, monitoring academic records, and overseeing overall system operations. The centralized database structure ensures secure storage and easy retrieval of data while reducing the chances of data duplication and manual errors.
+[NormalWeb] The Online Learning Management System can be implemented in schools, colleges, universities, coaching centers, and training institutions. It is suitable for both traditional educational environments and modern online learning platforms. The system can also be extended in the future by integrating advanced technologies such as video conferencing, cloud storage, mobile applications, artificial intelligence-based learning recommendations, email notifications, and real-time analytics. Therefore, the project provides a scalable and flexible foundation for developing an intelligent and technology-driven educational management system that meets the evolving requirements of modern education.
+[Heading1] CHAPTER 2
+[Heading1] LITERATURE REVIEW
+[Heading1] 2.1 English Course Online Learning System Design based on MVC
+The research paper titled “English Course Online Learning System Design based on MVC” was proposed by Fang Li-xia in 2015. The main objective of this study is to develop an online learning platform that supports teaching and learning activities through a web-based environment. The system is designed to provide students with online access to educational resources, assignments, examinations, and communication facilities while enabling teachers and administrators to manage academic activities efficiently. The study highlights the increasing importance of online learning due to the rapid growth of internet technologies and the need for flexible educational systems. 
+The proposed system includes several important modules such as personnel management, question bank management, courseware management, resource management, bulletin management, online learning, online examinations, and communication forums. Students can access learning materials such as PPT presentations, teaching videos, practice questions, and homework resources through the platform. Teachers can upload educational content, manage assignments, create examinations, and interact with students. The system also supports online testing with automatic evaluation and chapter-wise practice activities. 
+The authors implemented the system using the MVC (Model-View-Controller) architecture, which separates the application into three layers: Model, View, and Controller. This architecture improves maintainability, scalability, and system performance. The system utilizes the Struts framework and Hibernate technology for database management and data persistence. The MVC design enables efficient interaction between users, application logic, and the database while maintaining security and flexibility. 
+The paper emphasizes that online learning systems play a significant role in modern education by allowing students to learn remotely and access educational resources anytime and anywhere. The system provides a platform for teacher-student interaction, online examinations, homework evaluation, and resource sharing. The study concludes that the proposed online learning system offers security, stability, high performance, cross-platform compatibility, and effective management of educational resources. It successfully supports students’ online learning activities and improves the overall quality of education. 
+Advantages:
+Supports online learning and examinations. 
+Provides centralized management of educational resources. 
+Enables teacher-student communication and interaction. 
+Secure, scalable, and high-performance architecture. 
+Limitations:
+Does not include attendance management. 
+No certificate generation module. 
+Limited academic performance analytics. 
+2.2 Moodle – Open Source Learning Management System
+[pdq2pgselectionanchorcontainer] The research work on Moodle (Modular Object-Oriented Dynamic Learning Environment) focuses on providing a flexible and open-source Learning Management System that supports online education and academic management. Moodle is one of the most widely used e-learning platforms across schools, colleges, universities, and training institutions worldwide. The system is designed to facilitate teaching and learning through a web-based environment where students and teachers can interact efficiently. The platform enables institutions to manage courses, assignments, quizzes, discussions, grades, and learning resources from a centralized location.
+[NormalWeb] Moodle provides a comprehensive framework for online learning by allowing teachers to create and organize courses, upload study materials, conduct assessments, and monitor student performance. Students can access course content, participate in online discussions, submit assignments, attend quizzes, and receive feedback from instructors. The platform supports self-paced learning and collaborative learning activities, helping students improve their understanding through continuous engagement with educational resources.
+[NormalWeb] One of the major strengths of Moodle is its modular architecture and open-source nature. Educational institutions can customize the platform according to their requirements by adding plugins and extensions. The system supports multiple user roles such as administrator, teacher, and student, ensuring proper access control and security. Moodle also provides features such as grade management, attendance tracking, course announcements, discussion forums, messaging systems, and progress monitoring. These features help institutions efficiently manage academic activities and improve communication among users.
+[NormalWeb] The Moodle platform has been widely adopted because of its scalability, flexibility, and cost-effectiveness. It can support a large number of users and courses while maintaining system performance. The platform is accessible through web browsers and mobile devices, allowing students to learn from anywhere at any time. Furthermore, Moodle promotes collaborative learning by integrating discussion forums, group activities, and peer interaction features, which enhance the overall learning experience.
+[NormalWeb] The study concludes that Moodle is an effective e-learning solution that improves educational accessibility, enhances communication between teachers and students, and simplifies academic management processes. Its open-source nature, extensive feature set, and strong community support make it one of the most popular Learning Management Systems in the world.
+[Heading3] Advantages
+Open-source and free to use. 
+Supports course management and online learning. 
+Provides assignments, quizzes, and grading features. 
+Supports multiple user roles and permissions. 
+Accessible through web and mobile platforms. 
+Highly customizable and scalable. 
+[Heading3] Limitations
+Initial setup and configuration can be complex. 
+Requires technical knowledge for customization. 
+User interface may be difficult for beginners. 
+Large installations require higher server resources.
+2.3 Web-Based Learning Management System for Educational Institutions
+[pdq2pgselectionanchorcontainer] The paper titled “Web-Based Learning Management System for Educational Institutions” focuses on developing an integrated online platform that helps educational institutions manage academic activities efficiently. The system is designed to replace traditional paper-based processes with a centralized digital environment where students, teachers, and administrators can access and manage educational information through the internet. The study emphasizes the importance of technology in modern education and highlights how web-based systems can improve communication, accessibility, and academic administration.
+[NormalWeb] The proposed system provides various functionalities including student management, course management, assignment handling, examination management, attendance tracking, and report generation. Students can register, access course materials, submit assignments, and view their academic progress through the system. Teachers can upload learning resources, create assignments, evaluate student performance, and communicate important announcements. Administrators are responsible for managing users, maintaining academic records, and monitoring the overall system activities.
+[NormalWeb] One of the major objectives of the system is to provide a centralized platform where all academic information can be stored and accessed easily. The web-based architecture allows users to access the system from any location using a browser and internet connection. The platform improves efficiency by reducing manual work, minimizing paperwork, and ensuring accurate data management. It also provides secure access control mechanisms to protect student and institutional information.
+[NormalWeb] The system incorporates database management techniques to store student records, course details, examination results, and attendance information. Through automation, many repetitive administrative tasks are simplified, reducing workload for educational staff. The study highlights that a web-based learning environment enhances collaboration between students and teachers while providing flexibility in learning and academic management.
+[NormalWeb] The authors conclude that the implementation of a web-based Learning Management System significantly improves the quality of educational services by providing faster access to information, better resource management, and improved communication among users. The system supports effective learning and administrative processes while ensuring data consistency and reliability.
+[Heading3] Advantages
+Centralized academic information management. 
+Easy access through web browsers. 
+Reduces paperwork and manual processing. 
+Improves communication between students and teachers. 
+Secure storage of academic records. 
+Efficient course and assignment management. 
+[Heading3] Limitations
+Requires continuous internet connectivity. 
+Limited advanced analytics features. 
+Security risks if not properly maintained. 
+Dependence on server availability.
+[Heading1] 2.4 E-Learning Management System using Cloud Computing
+[pdq2pgselectionanchorcontainer] The paper titled “E-Learning Management System using Cloud Computing” focuses on the integration of cloud technology with educational systems to provide a flexible, scalable, and efficient learning environment. The study highlights the growing demand for online education and explains how cloud computing can enhance the accessibility and performance of Learning Management Systems. Traditional learning systems often face limitations related to storage capacity, system maintenance, and accessibility. The proposed cloud-based LMS addresses these challenges by providing a centralized platform that allows users to access educational resources from anywhere at any time.
+[NormalWeb] The system enables students to access course materials, assignments, quizzes, and learning resources through cloud infrastructure. Teachers can upload educational content, manage courses, conduct assessments, and monitor student performance remotely. Since the platform is hosted on cloud servers, users do not need high-end hardware or complex software installations. The cloud environment provides reliable storage, data backup, and easy resource sharing, making educational content available to all authorized users.
+[NormalWeb] One of the major advantages of cloud-based learning systems is scalability. Educational institutions can easily increase or decrease storage and computing resources based on the number of users and learning materials. The system also supports collaborative learning by enabling students and teachers to interact through online platforms. Cloud technology reduces infrastructure costs and maintenance efforts while improving system availability and performance. Additionally, automatic data backup and recovery mechanisms help prevent data loss and ensure continuity of educational services.
+[NormalWeb] The study emphasizes that cloud computing plays an important role in modern education by supporting distance learning and providing flexible access to educational resources. Students can learn at their own pace, while teachers can efficiently manage academic activities without geographical restrictions. The cloud-based LMS improves resource utilization, enhances learning experiences, and supports large-scale educational operations.
+[NormalWeb] The authors conclude that integrating cloud computing with Learning Management Systems provides a cost-effective, reliable, and scalable solution for educational institutions. The system improves accessibility, reduces administrative complexity, and enhances overall learning efficiency.
+[Heading3] Advantages
+Provides access to learning resources from anywhere. 
+Scalable and flexible infrastructure. 
+Reduces hardware and maintenance costs. 
+Supports large numbers of users. 
+Automatic backup and recovery features. 
+Improves resource sharing and collaboration. 
+[Heading3] Limitations
+Requires a stable internet connection. 
+Data security and privacy concerns. 
+Dependence on cloud service providers. 
+Service interruptions may affect accessibility.
+2.5 Smart Learning Management System with Student Performance Analysis
+[pdq2pgselectionanchorcontainer] The paper titled “Smart Learning Management System with Student Performance Analysis” focuses on developing an intelligent learning platform that manages academic activities and analyzes student performance. The system includes modules such as course management, assignment submission, quiz evaluation, attendance monitoring, and progress tracking. Students can access learning materials, complete assessments, and monitor their academic performance, while teachers can evaluate student progress using academic records and assessment results.
+[NormalWeb] A major feature of the system is performance analytics, which helps teachers understand student learning behavior through reports and progress analysis. The system uses academic data to identify student strengths and weaknesses, enabling better educational support and decision-making. It also encourages students to improve their performance through continuous monitoring and self-assessment.
+[NormalWeb] The study concludes that integrating performance analysis into Learning Management Systems improves educational quality, enhances student engagement, and supports effective academic management.
+[Heading3] Advantages
+Provides student performance analysis. 
+Supports academic progress monitoring. 
+Generates reports and insights. 
+Helps identify learning difficulties. 
+Improves educational decision-making. 
+[Heading3] Limitations
+Requires large amounts of academic data. 
+Complex system implementation. 
+Higher computational requirements. 
+Depends on data quality for accurate analysis.
+[Heading1] CHAPTER 3
+PROBLEM IDENTIFICATION 
+[Heading1] 3.1 Problem Identification
+[NormalWeb] In today's educational environment, many institutions still rely on traditional methods for managing academic activities such as course registration, attendance tracking, assignment submission, quiz management, and student performance evaluation. These manual processes are time-consuming, prone to human errors, and difficult to manage when the number of students increases. Maintaining paper-based records often leads to data redundancy, loss of information, and delays in accessing important academic details.
+[NormalWeb] Students face difficulties in accessing study materials, tracking attendance, monitoring academic progress, and receiving timely updates regarding assignments, examinations, and academic events. Similarly, teachers spend significant time managing assignments, evaluating student performance, maintaining attendance records, and communicating with students through separate channels. This increases workload and reduces overall efficiency.
+[NormalWeb] Another major challenge is the lack of a centralized platform where students, teachers, and administrators can interact and manage academic activities effectively. Existing systems may provide limited functionalities and often fail to integrate important features such as course enrollment, progress monitoring, leave management, notifications, academic calendars, and certificate generation within a single platform.
+[NormalWeb] The absence of an automated system can result in poor communication, inefficient record management, delayed academic processes, and difficulty in monitoring student performance. Therefore, there is a need for a comprehensive Online Learning Management System that can automate academic operations, improve accessibility, enhance communication, and provide a centralized environment for managing educational activities efficiently.
+[Heading3] Identified Problems
+[NormalWeb] Manual management of academic records.
+[NormalWeb] Difficulty in tracking student attendance and performance.
+[NormalWeb] Paper-based assignment submission and evaluation.
+[NormalWeb] Lack of centralized communication between students and teachers.
+[NormalWeb] Delayed access to academic information and notifications.
+[NormalWeb] Increased administrative workload.
+[NormalWeb] Risk of data loss and human errors.
+[NormalWeb] Limited accessibility to learning resources.
+[NormalWeb] Absence of automated certificate generation and progress tracking.
+[NormalWeb] Inefficient management of courses, quizzes, and academic activities.
+[NormalWeb] The proposed Online Learning Management System (LMS) is developed to address these challenges by providing a secure, automated, and user-friendly platform for academic management and online learning.
+[NormalWeb] 3.2 Objective
+[pdq2pgselectionanchorcontainer] The primary objective of the Online Learning Management System (LMS) is to develop a web-based platform that facilitates effective teaching, learning, and academic management through digital technologies. The system aims to provide a centralized environment where students, teachers, and administrators can perform academic activities efficiently and securely. The project is designed to simplify educational processes, improve communication, and enhance the overall learning experience.
+[NormalWeb] The LMS enables students to access course materials, enroll in courses, submit assignments, attend quizzes, monitor attendance, track academic progress, and download certificates through an easy-to-use online platform. Teachers can create and manage courses, upload study materials, conduct assessments, maintain attendance records, and evaluate student performance. Administrators can manage users, courses, notifications, and system operations through a centralized management interface.
+[NormalWeb] The system seeks to reduce paperwork, eliminate manual record maintenance, and improve the accuracy of academic data management. By automating routine educational tasks, the LMS enhances productivity and allows educational institutions to operate more efficiently. The project also promotes flexible and self-paced learning by enabling users to access academic resources anytime and anywhere.
+[Heading3] Objectives
+To provide a secure registration and login system for students, teachers, and administrators. 
+To enable online course enrollment and course management. 
+To facilitate assignment submission and evaluation through a digital platform. 
+To conduct online quizzes and assessments efficiently. 
+To maintain attendance records electronically. 
+To monitor student performance through progress tracking and marks management. 
+To provide notifications and academic calendar updates. 
+To support leave request management for students. 
+To generate certificates automatically for eligible students. 
+To improve communication between students, teachers, and administrators. 
+To reduce manual paperwork and administrative workload. 
+To create a centralized and efficient educational management system. 
+To support modern digital learning and academic management practices. 
+[NormalWeb] Thus, the Online Learning Management System aims to provide a complete, reliable, and user-friendly solution for managing educational activities and enhancing the quality of learning in educational institutions.
+[NormalWeb] 3.3 Methodology
+[pdq2pgselectionanchorcontainer] The Online Learning Management System (LMS) is developed using a structured methodology that ensures efficient design, development, testing, and implementation of the system. The methodology focuses on analyzing user requirements, designing the system architecture, developing functional modules, integrating the database, and validating system performance. The system follows a web-based client-server architecture where users interact with the application through a browser, while the backend processes requests and communicates with the database.
+[NormalWeb] The development process begins with requirement analysis, where the needs of students, teachers, and administrators are identified. Based on these requirements, the system architecture and database design are prepared. The application is then developed using Python Flask for backend processing, SQLite for database management, and HTML, CSS, and JavaScript for the frontend interface. Various modules such as user authentication, course management, assignment management, quiz management, attendance management, progress tracking, notifications, academic calendar, leave management, and certificate generation are implemented and integrated into a single platform.
+[NormalWeb] After development, the system undergoes testing to ensure that all functionalities operate correctly and securely. Finally, the system is deployed and made available for users to access educational resources and manage academic activities.
+[NormalWeb] Methodology Flow
+[NormalWeb] 3.4 Plan of Experiments
+[NormalWeb] The Plan of Experiments describes the activities carried out to develop, test, and validate the Online Learning Management System (LMS). The purpose of these experiments is to verify that all modules function correctly and meet the requirements of students, teachers, and administrators.
+[Heading2] Experiment 1: User Registration and Login Testing
+[Heading3] Objective
+[NormalWeb] To verify whether students, teachers, and administrators can register and log in successfully.
+[Heading3] Procedure
+[NormalWeb] Create new user accounts.
+[NormalWeb] Enter valid login credentials.
+[NormalWeb] Verify successful authentication.
+[NormalWeb] Test invalid username and password combinations.
+[Heading3] Expected Result
+[NormalWeb] Users should be able to log in successfully with valid credentials and receive error messages for invalid credentials.
+[Heading2] Experiment 2: Course Enrollment Testing
+[Heading3] Objective
+[NormalWeb] To verify the course enrollment functionality.
+[Heading3] Procedure
+[NormalWeb] Login as a student.
+[NormalWeb] View available courses.
+[NormalWeb] Select a course and click Enroll.
+[NormalWeb] Verify enrollment details in the database.
+[Heading3] Expected Result
+[NormalWeb] The selected course should be added to the student's enrolled course list.
+[Heading2] Experiment 3: Assignment Submission Testing
+[Heading3] Objective
+[NormalWeb] To verify assignment management functionality.
+[Heading3] Procedure
+[NormalWeb] Teacher creates assignments.
+[NormalWeb] Student submits assignments.
+[NormalWeb] Verify submission details in the database.
+[Heading3] Expected Result
+[NormalWeb] Assignment records should be stored successfully and displayed correctly.
+[Heading2] Experiment 4: Quiz Module Testing
+[Heading3] Objective
+[NormalWeb] To test online quiz functionality.
+[Heading3] Procedure
+[NormalWeb] Create quiz questions.
+[NormalWeb] Student attempts quiz.
+[NormalWeb] Calculate and store scores automatically.
+[Heading3] Expected Result
+[NormalWeb] Quiz scores and results should be generated correctly.
+[NormalWeb] Experiment 5: Attendance Management Testing
+[Heading3] Objective
+[NormalWeb] To verify attendance recording functionality.
+[Heading3] Procedure
+[NormalWeb] Mark attendance for students.
+[NormalWeb] Store attendance data in the database.
+[NormalWeb] Calculate attendance percentage.
+[Heading3] Expected Result
+[NormalWeb] Attendance records should be saved correctly and displayed accurately.
+[Heading2] Experiment 6: Progress Dashboard Testing
+[Heading3] Objective
+[NormalWeb] To evaluate student progress tracking.
+[Heading3] Procedure
+[NormalWeb] Collect assignment, quiz, and attendance data.
+[NormalWeb] Display progress statistics.
+[NormalWeb] Verify dashboard calculations.
+[Heading3] Expected Result
+[NormalWeb] Student performance information should be displayed correctly.
+[Heading2] Experiment 7: Notification Module Testing
+[Heading3] Objective
+[NormalWeb] To test notification management functionality.
+[Heading3] Procedure
+[NormalWeb] Create notifications.
+[NormalWeb] Display notifications on student dashboard.
+[NormalWeb] Verify notification updates.
+[Heading3] Expected Result
+[NormalWeb] Students should receive and view notifications successfully.
+[Heading2] Experiment 8: Academic Calendar Testing
+[Heading3] Objective
+[NormalWeb] To verify academic calendar functionality.
+[Heading3] Procedure
+[NormalWeb] Add academic events.
+[NormalWeb] Store event details.
+[NormalWeb] Display events in calendar view.
+[Heading3] Expected Result
+[NormalWeb] Academic events should be displayed correctly.
+[Heading2] Experiment 9: Leave Request Testing
+[Heading3] Objective
+[NormalWeb] To test leave application management.
+[Heading3] Procedure
+[NormalWeb] Student submits leave request.
+[NormalWeb] Teacher/Admin reviews request.
+[NormalWeb] Update approval status.
+[Heading3] Expected Result
+[NormalWeb] Leave requests should be stored and managed successfully.
+[Heading2] Experiment 10: Certificate Generation Testing
+[Heading3] Objective
+[NormalWeb] To verify certificate generation functionality.
+[Heading3] Procedure
+[NormalWeb] Complete quiz successfully.
+[NormalWeb] Generate certificate.
+[NormalWeb] Download certificate as PDF.
+[Heading3] Expected Result
+[NormalWeb] The system should generate and download a valid certificate.
+[Heading2] Experiment 11: Database Integration Testing
+[Heading3] Objective
+[NormalWeb] To ensure proper database connectivity.
+[Heading3] Procedure
+[NormalWeb] Insert, update, retrieve, and delete records.
+[NormalWeb] Verify database consistency.
+[Heading3] Expected Result
+[NormalWeb] All database operations should execute successfully.
+[Heading2] Experiment 12: System Testing and Validation
+[Heading3] Objective
+[NormalWeb] To verify overall system performance.
+[Heading3] Procedure
+[NormalWeb] Test all modules together.
+[NormalWeb] Identify errors and bugs.
+[NormalWeb] Validate outputs.
+[Heading3] Expected Result
+[NormalWeb] The LMS should function efficiently without errors.
+[Heading1] 3.5 Theoretical Background
+[NormalWeb] The Online Learning Management System (LMS) is based on the concepts of web-based learning, educational technology, database management systems, and client-server architecture. The system integrates various technologies to provide an efficient platform for managing educational activities such as course management, assignment submission, quizzes, attendance tracking, progress monitoring, notifications, and certificate generation. The theoretical foundation of the project focuses on improving the teaching and learning process through digital transformation and automation.
+[Heading2] Learning Management System (LMS)
+[NormalWeb] A Learning Management System is a software application used to create, manage, deliver, and monitor educational content and learning activities. It provides a centralized platform where students, teachers, and administrators can interact effectively. LMS platforms support online learning by offering course materials, assignments, assessments, communication tools, and performance tracking features. The main goal of an LMS is to improve accessibility, flexibility, and efficiency in education.
+[Heading2] Web-Based Application
+[NormalWeb] A web-based application is software that operates through a web browser using internet technologies. Users can access the application from any location without installing additional software. The Online Learning Management System is developed as a web application using HTML, CSS, JavaScript, and Python Flask. This approach improves accessibility and enables users to access academic resources anytime and anywhere.
+[Heading2] Client-Server Architecture
+[NormalWeb] The LMS follows a client-server architecture. In this architecture, the client (web browser) sends requests to the server, and the server processes those requests and returns the appropriate response. The frontend interface acts as the client, while the Flask application acts as the server. This architecture enables efficient communication between users and the database.
+[Heading3] Components:
+[NormalWeb] Client (Student, Teacher, Admin Interface)
+[NormalWeb] Web Server (Flask Application)
+[NormalWeb] Database Server (SQLite)
+[NormalWeb] Network Communication
+[Heading2] Database Management System (DBMS)
+[NormalWeb] A Database Management System is used to store, organize, retrieve, and manage data efficiently. The LMS uses SQLite as its database management system. The database stores user information, course details, assignments, quiz records, attendance data, notifications, academic calendar events, leave requests, and certificates. Proper database management ensures data consistency, security, and reliability.
+[Heading2] User Authentication System
+[NormalWeb] User authentication is a security mechanism used to verify the identity of users before granting access to the system. The LMS provides separate login facilities for students, teachers, and administrators. Authentication ensures that only authorized users can access protected resources and perform permitted actions within the system.
+[Heading2] Course Management System
+[NormalWeb] Course management is one of the core functionalities of the LMS. It allows teachers and administrators to create, update, and manage courses. Students can browse available courses and enroll in them. This module helps organize learning resources and academic content efficiently.
+[Heading2] Assignment Management System
+[NormalWeb] Assignment management enables teachers to create assignments and students to submit their work online. The system stores assignment details, submission records, and evaluation results digitally. This reduces paperwork and simplifies assignment handling.
+[Heading2] Online Quiz System
+[NormalWeb] The online quiz system allows teachers to conduct assessments electronically. Students can answer quiz questions through the web interface, and the system automatically evaluates responses and generates scores. This feature improves assessment efficiency and reduces manual evaluation efforts.
+[Heading2] Attendance Management System
+[NormalWeb] Attendance management helps institutions maintain attendance records digitally. Teachers can record attendance, and students can monitor their attendance percentages through the system. Automated attendance tracking improves accuracy and simplifies record maintenance.
+[Heading2] Progress Tracking System
+[NormalWeb] The progress tracking module monitors student performance using quiz scores, assignments, attendance records, and marks. It provides performance reports that help students and teachers evaluate academic progress and identify areas for improvement.
+[Heading2] Certificate Generation System
+[NormalWeb] Certificate generation is an automated feature that creates digital certificates for students who successfully complete course requirements. The system generates PDF certificates containing student details and course completion information. This reduces administrative effort and ensures quick certificate delivery.
+[Heading2] Academic Calendar and Notification System
+[NormalWeb] The academic calendar module stores information about examinations, assignment deadlines, holidays, workshops, and academic events. The notification system helps administrators and teachers communicate important announcements to students. These modules improve communication and ensure that users remain informed about academic activities.
+[Heading2] Python Flask Framework
+[NormalWeb] Flask is a lightweight Python web framework used for developing web applications. It provides routing, session management, template rendering, and database connectivity features. Flask is used as the backend technology in the LMS to handle user requests, process data, and communicate with the SQLite database.
+[Heading2] Frontend Technologies
+[NormalWeb] The frontend of the LMS is developed using:
+[NormalWeb] HTML for webpage structure.
+[NormalWeb] CSS for styling and layout design.
+[NormalWeb] JavaScript for interactive functionalities.
+[NormalWeb] These technologies create an attractive and user-friendly interface for students, teachers, and administrators.
+[Heading1] CHAPTER 4
+[Heading1] 4.1 System Architecture
+[NormalWeb] The Online Learning Management System (LMS) is designed using a Client–Server Architecture that provides an efficient and centralized platform for managing academic activities. The architecture enables communication between students, teachers, administrators, the application server, and the database system. The main objective of this architecture is to ensure secure data management, easy accessibility, and smooth interaction among all users of the system.
+[NormalWeb] In the proposed LMS, users access the application through a web browser. The frontend of the system is developed using HTML, CSS, and JavaScript, which provides an interactive and user-friendly interface. Students can enroll in courses, submit assignments, attend quizzes, view attendance, track progress, and download certificates. Teachers can manage courses, assignments, quizzes, attendance records, and study materials. Administrators have complete control over user management, notifications, academic calendars, and overall system operations.
+[NormalWeb] The backend of the system is developed using the Python Flask Framework. Flask acts as the application server and processes all requests received from users. Whenever a user performs an action such as logging in, enrolling in a course, submitting an assignment, or attending a quiz, the request is sent to the Flask server. The server validates the request, executes the required business logic, and communicates with the database to retrieve or store information.
+[NormalWeb] The system uses SQLite Database for data storage and management. The database maintains information related to students, teachers, administrators, courses, assignments, quizzes, attendance records, notifications, leave requests, study materials, progress reports, and certificates. The database ensures data consistency, reliability, and quick retrieval of academic information. All modules within the LMS interact with the database through the Flask backend.
+[NormalWeb] The architecture follows a centralized approach where all academic information is stored in a single database. This reduces data redundancy and improves system efficiency. Since the system is web-based, users can access the LMS from any location using a device with an internet connection and a web browser. The architecture also supports future enhancements such as cloud integration, mobile application support, artificial intelligence-based recommendations, and advanced analytics.
+[NormalWeb] The overall architecture improves communication between students, teachers, and administrators while automating educational activities. It reduces manual paperwork, increases operational efficiency, and provides a secure platform for digital learning and academic management. Therefore, the Client–Server Architecture serves as the foundation for the successful implementation of the Online Learning Management System.
+[Heading3] 4.2 User Authentication
+[NormalWeb] The User Authentication Module provides secure access to the Online Learning Management System (LMS). It ensures that only authorized users can access the system and use its features.
+[NormalWeb] The LMS supports three types of users:
+[NormalWeb] Students
+[NormalWeb] Teachers
+[NormalWeb] Administrators
+[NormalWeb] Each user has a separate login interface and dashboard based on their role. During login, the system verifies the entered email and password with the records stored in the SQLite database. If the credentials are correct, the user is redirected to the appropriate dashboard; otherwise, access is denied.
+[NormalWeb] The system uses Flask Session Management to maintain user login status and protect secure pages. Registration functionality allows new users to create accounts, while validation prevents duplicate user records.
+[NormalWeb] Overall, the User Authentication Module provides secure login, user verification, session management, and role-based access control, ensuring the security and reliability of the LMS.
+[Heading1]     Figure 4.2.1: Student Login PageFigure 4.2.2: Teacher Login Page
+Figure 4.2.3: Admin Login Page
+[Heading1] Figure 4.2.4: Successful User Authentication Dashboard
+[Heading1] 4.3 Course Management
+[NormalWeb] The Course Management Module is an important component of the Online Learning Management System (LMS). It allows administrators and teachers to create, manage, and organize courses within the system. This module helps students easily access available courses and enroll in them according to their interests and academic requirements.
+[NormalWeb] Course information such as course title, instructor name, duration, and course description is stored in the database. Students can view all available courses through the course portal and enroll in their preferred courses. After enrollment, the selected courses are displayed in the My Courses section for easy access.
+[NormalWeb] The module provides a centralized platform for managing academic courses and learning resources. It improves course organization, simplifies enrollment, and enhances the overall learning experience for students.
+[NormalWeb] Overall, the Course Management Module enables efficient course administration and supports smooth delivery of educational content through the LMS.
+[Heading1] Figure 4.3.1: Available Courses Page
+Figure 4.3.2: My Courses Dashboard
+[Heading1] 4.4 Assignment Management
+[NormalWeb] The Assignment Management Module helps teachers create and manage assignments, while students can submit their assignments through the Online Learning Management System. This module simplifies the assignment submission process and reduces the need for paper-based work.
+[NormalWeb] Teachers can add assignment details such as assignment title, due date, and description. Students can view available assignments and submit their work before the deadline. All assignment information and submission records are stored securely in the database for future reference.
+[NormalWeb] The module enables efficient tracking of assignment activities and helps teachers evaluate student performance. It also allows students to monitor their assignment status and complete academic tasks on time.
+[NormalWeb] Overall, the Assignment Management Module improves academic management by providing a simple and organized platform for assignment creation, submission, and monitoring.
+[NormalWeb] Figure 4.4.1: Add Assignment Page
+Figure 4.4.2: Assignment Submission Page
+[Heading1] 4.5 Quiz Management
+[NormalWeb] The Quiz Management Module is used to conduct online assessments and evaluate student performance. It allows teachers to create quiz questions and enables students to attend quizzes through the Online Learning Management System.
+[NormalWeb] Teachers can add quiz questions, options, and correct answers. Students can attempt the quiz and submit their responses online. The system automatically evaluates the answers and calculates the score. Quiz results are stored in the database and can be viewed by students and administrators.
+[NormalWeb] This module helps assess students' understanding of course topics and provides immediate feedback on their performance. It reduces manual evaluation efforts and improves the efficiency of the assessment process.
+[NormalWeb] Overall, the Quiz Management Module provides a simple and effective way to conduct online examinations and monitor student learning outcomes.
+Figure 4.5.1: Add Quiz Page
+Figure 4.5.2: Attend Quiz Page
+Figure 4.5.3: Quiz Result Page
+[Heading1] 4.6 Attendance Management
+[NormalWeb] The Attendance Management Module is used to maintain student attendance records in a digital format. This module helps teachers record attendance efficiently and eliminates the need for manual attendance registers.
+[NormalWeb] Teachers can mark student attendance through the system, and the attendance data is stored securely in the SQLite database. The system automatically calculates attendance percentages based on the recorded information. Students can view their attendance status and monitor their attendance percentage through the dashboard.
+[NormalWeb] The module improves accuracy, reduces paperwork, and provides easy access to attendance records whenever required. It also helps students maintain regular attendance by allowing them to track their attendance performance.
+[NormalWeb] Overall, the Attendance Management Module simplifies attendance tracking and supports effective academic management within the LMS.
+Figure 4.6.1: Mark Attendance Page
+Figure 4.6.2: View Attendance Page
+[Heading1] 4.7 Progress Tracking
+[NormalWeb] The Progress Tracking Module helps monitor and evaluate the academic performance of students. It collects information from various modules such as quizzes, assignments, attendance, and course activities to provide a clear overview of student progress.
+[NormalWeb] The system displays student performance through a Progress Dashboard, where students can view their quiz scores, attendance percentage, assignment completion status, and overall academic performance. Teachers can also use this information to identify students who need additional support and guidance.
+[NormalWeb] The module provides a centralized view of academic achievements and helps students understand their strengths and areas for improvement. By continuously tracking performance, the system encourages students to participate actively in learning activities and maintain consistent academic progress.
+[NormalWeb] Overall, the Progress Tracking Module improves learning outcomes by providing accurate performance analysis and helping both students and teachers monitor academic growth effectively.
+Figure 4.7.1: Student Progress Dashboard
+[Heading1] 4.8 Database Design
+[NormalWeb] The Database Design Module is responsible for storing and managing all data used in the Online Learning Management System (LMS). The system uses SQLite as the database because it is lightweight, efficient, and easy to integrate with the Flask framework.
+[NormalWeb] The database stores information related to students, teachers, administrators, courses, assignments, quizzes, attendance records, notifications, leave requests, study materials, and certificates. Each module is connected to the database to ensure proper storage and retrieval of information. Whenever a user performs an action such as login, course enrollment, assignment submission, or quiz participation, the corresponding data is stored in the database.
+[NormalWeb] The database is designed using multiple tables with appropriate relationships to avoid data redundancy and maintain consistency. Proper database design helps improve system performance, security, and reliability. It also enables quick access to academic information and supports smooth functioning of all LMS modules.
+[NormalWeb] Overall, the Database Design Module provides a centralized storage mechanism that ensures accurate data management and efficient operation of the Online Learning Management System.
+[Heading1] 4.9 Testing and Validation
+[NormalWeb] The Testing and Validation Module ensures that all functionalities of the Online Learning Management System (LMS) work correctly and meet the specified requirements. Testing is performed to identify errors, verify system performance, and ensure smooth interaction between different modules of the application.
+[NormalWeb] Various tests are conducted on modules such as User Authentication, Course Management, Assignment Management, Quiz Management, Attendance Management, Progress Tracking, Certificate Generation, and Database Operations. Each module is tested individually to verify its functionality and then integrated testing is performed to ensure that all modules work together without issues.
+[NormalWeb] Validation is carried out to confirm that the system meets user requirements and produces accurate results. User inputs, database operations, and system outputs are checked to ensure correctness and reliability. Any identified errors are corrected before deployment.
+[NormalWeb] Testing helps improve system quality, enhances security, reduces software defects, and ensures a better user experience. Through proper validation, the LMS becomes a reliable platform for managing academic activities efficiently.
+[Heading3] Types of Testing Performed
+Unit Testing 
+Functional Testing 
+Integration Testing 
+Database Testing 
+User Acceptance Testing (UAT)
+[Heading1] CHAPTER 5
+[Heading1] RESULTS AND DISCUSSION
+5.1 Experimental Results
+The Online Learning Management System (LMS) was successfully developed and tested using Python Flask, SQLite, HTML, CSS, and JavaScript. The system integrated various academic management functionalities such as user authentication, course management, assignment submission, quiz management, attendance tracking, progress monitoring, and certificate generation into a single platform. During implementation, all modules operated according to the specified requirements and produced accurate outputs.
+Students were able to register, log in, enroll in courses, submit assignments, attend quizzes, view attendance records, track academic progress, and download certificates successfully. Teachers were able to manage courses, assignments, quizzes, and attendance records efficiently. Administrators successfully managed users, notifications, and academic activities. The generated results confirmed that the system provides a reliable and user-friendly environment for managing educational activities digitally.
+5.2 Testing Methods
+The Testing Methods were used to verify the functionality, performance, and reliability of the Online Learning Management System (LMS). Testing was carried out to ensure that all modules worked correctly and produced accurate results. Different testing techniques were applied to identify errors and validate system requirements.
+[Heading3] Functional Testing
+[NormalWeb] Functional Testing was performed to verify whether each module operated according to its intended functionality. Features such as user login, course enrollment, assignment submission, quiz participation, attendance management, progress tracking, and certificate generation were tested individually. The results confirmed that all functions worked correctly and produced the expected outputs.
+[Heading3] Integration Testing
+[NormalWeb] Integration Testing was conducted to ensure proper communication between the frontend, backend, and database. The interaction between Flask routes, HTML pages, and SQLite database operations was verified. This testing confirmed that data was transferred and processed correctly across different modules.
+[Heading3] Database Testing
+[NormalWeb] Database Testing was performed to validate data storage, retrieval, updating, and deletion operations. User information, course details, assignments, quiz results, attendance records, and certificates were successfully stored and retrieved from the SQLite database without errors.
+[Heading3] User Acceptance Testing (UAT)
+[NormalWeb] User Acceptance Testing was conducted to evaluate the system from the user's perspective. Students, teachers, and administrators tested the LMS functionalities and confirmed that the system met their requirements. The feedback indicated that the system was easy to use and provided the expected services efficiently.
+ 5.3 Discussion
+The developed Online Learning Management System successfully achieved its objectives by providing a centralized platform for academic management. The system reduced manual paperwork, improved communication between students and teachers, and simplified academic activities such as course enrollment, assignment submission, attendance management, and assessment evaluation.
+The integration of progress tracking and certificate generation enhanced the overall learning experience by enabling students to monitor their academic performance and obtain course completion certificates automatically. The use of Python Flask and SQLite provided a lightweight and efficient solution for educational institutions. Overall, the system demonstrated good performance, usability, and reliability, making it a suitable platform for supporting modern digital learning environments.
+[Heading1] CHAPTER 6
+[Heading1] CONCLUSION AND FUTURE ENHANCEMENTS
+[Heading1] 6.1 Conclusion
+[pdq2pgselectionanchorcontainer] The Online Learning Management System (LMS) was successfully designed and implemented to provide a centralized platform for managing academic activities. The system integrates important educational functionalities such as user authentication, course management, assignment submission, quiz management, attendance tracking, progress monitoring, notifications, academic calendar management, and certificate generation within a single application.
+[NormalWeb] The developed LMS simplifies the teaching and learning process by reducing manual paperwork and improving communication between students, teachers, and administrators. Students can access learning resources, participate in assessments, monitor their academic performance, and obtain certificates through an easy-to-use web interface. Teachers can efficiently manage courses, assignments, quizzes, and attendance records, while administrators can oversee overall system operations.
+[NormalWeb] The implementation and testing results confirmed that all modules function correctly and meet the project objectives. The use of Python Flask, SQLite, HTML, CSS, and JavaScript provided a reliable and efficient solution for academic management. Overall, the project successfully demonstrates the benefits of digital learning systems in improving educational efficiency, accessibility, and productivity.
+[Heading1] 6.2 Future Enhancements
+[NormalWeb] Although the Online Learning Management System provides several useful features, additional improvements can be implemented in the future to enhance system capabilities and user experience.
+[Heading3] Future Enhancements
+Development of a mobile application for Android and iOS platforms. 
+Integration of cloud-based storage for improved scalability and data accessibility. 
+Implementation of video conferencing features for live online classes. 
+Addition of AI-based learning recommendations based on student performance. 
+Integration of chat and discussion forums for better communication. 
+Implementation of online fee payment facilities. 
+Addition of email and SMS notification services. 
+Integration of advanced analytics and reporting dashboards. 
+Support for multiple institutions and departments within a single platform. 
+Implementation of biometric or facial recognition attendance systems. 
+Integration with external learning resources and e-learning platforms. 
+Enhancement of system security through advanced authentication mechanisms. 
+[NormalWeb] These future enhancements can further improve the functionality, scalability, and effectiveness of the Online Learning Management System, making it a more comprehensive solution for modern educational institutions.
+REFERENCE
+[1] N. Zheng, S. Tian and Y. Chen, "Online Learning Management System," 2015 International Conference on Computational Science and Computational Intelligence (CSCI), Las Vegas, NV, USA, 2015, pp. 293-299, doi: 10.1109/CSCI.2015.160.
+[2] S. Sakulwichitsintu, "Metaverse for Collaborative Online Learning: Short Review," 2023 8th International Conference on Information and Network Technologies (ICINT), Tokyo, Japan, 2023, pp. 13-17, doi: 10.1109/ICINT58947.2023.00010.
+[3] L. A. Almusfar, "Improving Learning Management System Performance: A Comprehensive Approach to Engagement, Trust, and Adaptive Learning," in IEEE Access, vol. 13, pp. 46408-46425, 2025, doi: 10.1109/ACCESS.2025.3550288.
+[4] F. Li-Xia, "English Course Online Learning System Design Based on MVC," 2015 Sixth International Conference on Intelligent Systems Design and Engineering Applications (ISDEA), Guiyang, China, 2015, pp. 372-375, doi: 10.1109/ISDEA.2015.99.
+[5] P. Mathur and A. M. Sharma, "Exploring the Impact of Learning Management System (LMS) Adoption on Online Learning: An Educator-Centric Perspective," 2024 2nd International Conference on Recent Trends in Microelectronics, Automation, Computing and Communications Systems (ICMACC), Hyderabad, India, 2024, pp. 87-92, doi: 10.1109/ICMACC62921.2024.10894691.
+[6] S. Dlalisa, "Acceptance and usage of learning management system amongst academics," 2017 Conference on Information Communication Technology and Society (ICTAS), Durban, South Africa, 2017, pp. 1-7, doi: 10.1109/ICTAS.2017.7920525.
+ANNEXURE I
+SOURCE CODE
+app.py
+from flask import Flask, render_template, request, redirect, session
+from flask import send_from_directory, send_file
+from flask import flash, url_for
+from database import conn, cursor
+import os
+import sqlite3
+import random
+from werkzeug.utils import secure_filename
+from reportlab.pdfgen import canvas
+from datetime import datetime
+app = Flask(__name__)
+app.secret_key = "your_secret_key"
+# ---------------- Upload Folder ---------------- #
+UPLOAD_FOLDER = "uploads"
+PROFILE_FOLDER = "static/profile"
+app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
+app.config["PROFILE_FOLDER"] = PROFILE_FOLDER
+os.makedirs(UPLOAD_FOLDER, exist_ok=True)
+os.makedirs(PROFILE_FOLDER, exist_ok=True)
+# ---------------- HOME ---------------- #
+@app.route("/")
+def home():
+    return render_template("index.html")
+# ---------------- STUDENT LOGIN ---------------- #
+@app.route("/student", methods=["GET","POST"])
+def login():
+    if request.method == "POST":
+        email = request.form["email"].strip()
+        password = request.form["password"]
+        cursor.execute(
+            """
+            SELECT *
+            FROM users
+            WHERE email=? AND password=?
+            """,
+            (email,password)
+        )
+        user = cursor.fetchone()
+        if user:
+            session["user"] = user[1]
+            return redirect("/dashboard")
+        return render_template(
+            "login.html",
+            error="Invalid Email or Password"
+        )
+    return render_template("login.html")
+# ---------------- REGISTER ---------------- #
+@app.route("/register", methods=["GET","POST"])
+def register():
+    if request.method == "POST":
+        name = request.form["name"].strip()
+        email = request.form["email"].strip()
+        password = request.form["password"]
+        try:
+            cursor.execute(
+                """
+                INSERT INTO users
+                (name,email,password)
+                VALUES(?,?,?)
+                """,
+                (name,email,password)
+            )
+            conn.commit()
+            return redirect("/")
+        except sqlite3.IntegrityError:
+            return render_template(
+                "register.html",
+                error="Email already exists."
+            )
+    return render_template("register.html")
+# ---------------- FORGOT PASSWORD ---------------- #
+@app.route("/forgot_password", methods=["GET","POST"])
+def forgot_password():
+    if request.method == "POST":
+        email = request.form["email"].strip()
+        cursor.execute(
+            "SELECT * FROM users WHERE email=?",
+            (email,)
+        )
+        user = cursor.fetchone()
+        if user:
+            otp = str(random.randint(100000,999999))
+            session["otp"] = otp
+            session["email"] = email
+            print("="*40)
+            print(" LMS PASSWORD RESET OTP ")
+            print("="*40)
+            print("EMAIL :",email)
+            print("OTP   :",otp)
+            print("="*40)
+            return redirect("/verify_otp")
+        return render_template(
+            "forgot_password.html",
+            error="Email not found."
+        )
+    return render_template("forgot_password.html")
+# ---------------- VERIFY OTP ---------------- #
+@app.route("/verify_otp", methods=["GET","POST"])
+def verify_otp():
+    if request.method=="POST":
+        otp=request.form["otp"]
+        if otp==session.get("otp"):
+            return redirect("/reset_password")
+        flash("Invalid OTP","danger")
+    return render_template("verify_otp.html")
+# ---------------- RESET PASSWORD ---------------- #
+@app.route("/reset_password", methods=["GET","POST"])
+def reset_password():
+    if request.method=="POST":
+        password=request.form["password"]
+        confirm=request.form["confirm_password"]
+        if password!=confirm:
+            flash("Passwords do not match","danger")
+            return redirect("/reset_password")
+        email=session.get("email")
+        cursor.execute(
+            """
+            UPDATE users
+            SET password=?
+            WHERE email=?
+            """,
+            (password,email)
+        )
+        conn.commit()
+        session.pop("otp",None)
+        session.pop("email",None)
+        flash("Password Updated Successfully","success")
+        return redirect("/student")
+    return render_template("reset_password.html")
+# ---------------- DASHBOARD ---------------- #
+@app.route("/dashboard")
+def dashboard():
+    if "user" not in session:
+        return redirect("/")
+    username = session["user"]
+    cursor.execute("""
+    SELECT title, message, created_at
+    FROM notifications
+    ORDER BY id DESC
+    LIMIT 5
+    """)
+    notifications = cursor.fetchall()
+    return render_template(
+        "dashboard.html",
+        username=username,
+        notifications=notifications
+    )
+@app.route("/attendance")
+def attendance():
+    if "user" not in session:
+        return redirect("/")
+    username = session["user"]
+    cursor.execute("""
+    SELECT *
+    FROM attendance
+    WHERE student_name=?
+    ORDER BY id DESC
+    """, (username,))
+    records = cursor.fetchall()
+    total = len(records)
+    present = sum(1 for r in records if r[3] == "Present")
+    percentage = 0
+    if total > 0:
+        percentage = round((present / total) * 100, 2)
+    return render_template(
+        "attendance.html",
+        attendance=records,
+        percentage=percentage
+    )
+@app.route("/marks")
+def marks():
+    if "user" not in session:
+        return redirect("/student")
+    username = session["user"]
+    cursor.execute("""
+    SELECT *
+    FROM marks
+    WHERE student_name=?
+    """,(username,))
+    data = cursor.fetchone()
+    return render_template(
+        "marks.html",
+        marks=data
+    )
+# ---------------- COURSES ---------------- #
+@app.route("/courses")
+def courses():
+    if "user" not in session:
+        return redirect("/student")
+    cursor.execute("SELECT * FROM courses")
+    course_list = cursor.fetchall()
+    return render_template(
+        "courses.html",
+        courses=course_list
+    )
+@app.route("/enroll_course/<course_name>")
+def enroll_course(course_name):
+    if "user" not in session:
+        return redirect("/student")
+    student = session["user"]
+    cursor.execute("""
+    INSERT INTO enrollments
+    (student_name, course_name, enrollment_date)
+    VALUES (?, ?, date('now'))
+    """, (student, course_name))
+    conn.commit()
+    return redirect("/my_courses")
+@app.route("/my_courses")
+def my_courses():
+    if "user" not in session:
+        return redirect("/student")
+    student = session["user"]
+    cursor.execute("""
+    SELECT * FROM enrollments
+    WHERE student_name=?
+    """, (student,))
+    courses = cursor.fetchall()
+    return render_template(
+        "my_courses.html",
+        courses=courses
+    )
+# ---------------- ASSIGNMENTS ---------------- #
+@app.route("/assignments")
+def assignments():
+    if "user" not in session:
+        return redirect("/student")
+    student = session["user"]
+    cursor.execute("SELECT * FROM assignments")
+    assignment_list = cursor.fetchall()
+    assignment_data = []
+    for assignment in assignment_list:
+        cursor.execute("""
+        SELECT status
+        FROM submissions
+        WHERE student_name=? AND assignment_title=?
+        """, (student, assignment[1]))
+        result = cursor.fetchone()
+        status = result[0] if result else "Pending"
+        assignment_data.append({
+            "id": assignment[0],
+            "title": assignment[1],
+            "due_date": assignment[2],
+            "description": assignment[3],
+            "status": status
+        })
+    return render_template(
+        "assignments.html",
+        assignments=assignment_data
+    )
+# ---------------- SUBMIT ASSIGNMENT ---------------- #
+@app.route("/submit_assignment/<int:id>", methods=["GET","POST"])
+def submit_assignment(id):
+    if "user" not in session:
+        return redirect("/student")
+    cursor.execute(
+        "SELECT * FROM assignments WHERE id=?",
+        (id,)
+    )
+    assignment = cursor.fetchone()
+    if request.method == "POST":
+        student = session["user"]
+        file = request.files["assignment_file"]
+        if file.filename == "":
+            return "Please select a file."
+        filename = secure_filename(file.filename)
+        file.save(
+            os.path.join(
+                app.config["UPLOAD_FOLDER"],
+                filename
+            )
+        )
+        cursor.execute("""
+        INSERT INTO submissions
+        (
+            student_name,
+            assignment_title,
+            file_name,
+            submission_date,
+            status
+        )
+        VALUES
+        (
+            ?,
+            ?,
+            ?,
+            date('now'),
+            ?
+        )
+        """,
+        (
+            student,
+            assignment[1],
+            filename,
+            "Submitted"
+        ))
+        conn.commit()
+        return redirect("/assignments")
+    return render_template(
+        "submit_assignment.html",
+        assignment=assignment
+    )
+# ---------------- QUIZ ---------------- #
+@app.route("/quiz", methods=["GET","POST"])
+def quiz():
+    if "user" not in session:
+        return redirect("/student")
+    cursor.execute("SELECT * FROM quiz")
+    questions = cursor.fetchall()
+    score = None
+    total = len(questions)
+    result = None
+    if request.method == "POST":
+        score = 0
+        for q in questions:
+            answer = request.form.get(f"q{q[0]}")
+            if answer == q[6]:
+                score += 1
+        student = session["user"]
+        result = "PASS" if score >= total/2 else "FAIL"
+        cursor.execute("""
+        INSERT INTO quiz_results
+        (
+            student_name,
+            score,
+            total,
+            result
+        )
+        VALUES
+        (
+            ?,
+            ?,
+            ?,
+            ?
+        )
+        """,
+        (
+            student,
+            score,
+            total,
+            result
+        ))
+        conn.commit()
+    return render_template(
+        "quiz.html",
+        questions=questions,
+        score=score,
+        total=total,
+        result=result
+    )
+# ---------------- PROFILE ---------------- #
+@app.route("/profile", methods=["GET","POST"])
+def profile():
+    if "user" not in session:
+        return redirect("/student")
+    username = session["user"]
+    cursor.execute(
+        "SELECT email FROM users WHERE name=?",
+        (username,)
+    )
+    user = cursor.fetchone()
+    if not user:
+        return redirect("/student")
+    email = user[0]
+    if request.method == "POST":
+        phone = request.form["phone"]
+        department = request.form["department"]
+        cursor.execute(
+            "SELECT * FROM profile WHERE email=?",
+            (email,)
+        )
+        data = cursor.fetchone()
+        if data:
+            cursor.execute("""
+            UPDATE profile
+            SET phone=?,
+                department=?
+            WHERE email=?
+            """,
+            (
+                phone,
+                department,
+                email
+            ))
+        else:
+            cursor.execute("""
+            INSERT INTO profile
+            (
+                email,
+                phone,
+                department
+            )
+            VALUES
+            (
+                ?,
+                ?,
+                ?
+            )
+            """,
+            (
+                email,
+                phone,
+                department
+            ))
+        conn.commit()
+        return redirect("/profile")
+    cursor.execute("""
+    SELECT
+        phone,
+        department,
+        photo
+    FROM profile
+    WHERE email=?
+    """,
+    (email,)
+    )
+    data = cursor.fetchone()
+    if data:
+        phone = data[0]
+        department = data[1]
+        photo = data[2]
+    else:
+        phone = ""
+        department = ""
+        photo = ""
+    student = {
+        "name": username,
+        "email": email,
+        "phone": phone,
+        "department": department,
+        "register_no": "N/A",
+        "joined_date": "2026",
+        "photo": photo
+    }
+    return render_template(
+        "profile.html",
+        user=student
+    )
+# ---------------- PROFILE PHOTO ---------------- #
+@app.route("/upload_photo", methods=["POST"])
+def upload_photo():
+    if "user" not in session:
+        return redirect("/student")
+    username = session["user"]
+    cursor.execute(
+        "SELECT email FROM users WHERE name=?",
+        (username,)
+    )
+    email = cursor.fetchone()[0]
+    file = request.files["photo"]
+    if file.filename != "":
+        filename = secure_filename(file.filename)
+        file.save(
+            os.path.join(
+                app.config["PROFILE_FOLDER"],
+                filename
+            )
+        )
+        cursor.execute(
+            "SELECT * FROM profile WHERE email=?",
+            (email,)
+        )
+        data = cursor.fetchone()
+        if data:
+            cursor.execute("""
+            UPDATE profile
+            SET photo=?
+            WHERE email=?
+            """,
+            (
+                filename,
+                email
+            ))
+        else:
+            cursor.execute("""
+            INSERT INTO profile
+            (
+                email,
+                photo
+            )
+            VALUES
+            (
+                ?,
+                ?
+            )
+            """,
+            (
+                email,
+                filename
+            ))
+        conn.commit()
+    return redirect("/profile")
+# ==========================================================
+#                   TEACHER MODULE
+# ==========================================================
+# ---------------- TEACHER LOGIN ---------------- #
+@app.route("/teacher", methods=["GET", "POST"])
+def teacher():
+    if request.method == "POST":
+        email = request.form["email"]
+        password = request.form["password"]
+        cursor.execute(
+            """
+            SELECT *
+            FROM teacher
+            WHERE email=? AND password=?
+            """,
+            (email, password)
+        )
+        teacher = cursor.fetchone()
+        if teacher:
+            session["teacher"] = teacher[1]
+            return redirect("/teacher_dashboard")
+        return render_template(
+            "teacher_login.html",
+            error="Invalid Email or Password"
+        )
+    return render_template("teacher_login.html")
+# ---------------- TEACHER DASHBOARD ---------------- #
+@app.route("/teacher_dashboard")
+def teacher_dashboard():
+    if "teacher" not in session:
+        return redirect("/teacher")
+    cursor.execute("SELECT COUNT(*) FROM courses")
+    total_courses = cursor.fetchone()[0]
+    cursor.execute("SELECT COUNT(*) FROM assignments")
+    total_assignments = cursor.fetchone()[0]
+    cursor.execute("SELECT COUNT(*) FROM quiz")
+    total_quiz = cursor.fetchone()[0]
+    cursor.execute("SELECT COUNT(*) FROM users")
+    total_students = cursor.fetchone()[0]
+    return render_template(
+        "teacher_dashboard.html",
+        teacher=session["teacher"],
+        total_courses=total_courses,
+        total_assignments=total_assignments,
+        total_quiz=total_quiz,
+        total_students=total_students
+    )
+@app.route("/teacher_marks", methods=["GET", "POST"])
+def teacher_marks():
+    if "teacher" not in session:
+        return redirect("/teacher")
+    cursor.execute("SELECT name FROM users")
+    students = cursor.fetchall()
+    if request.method == "POST":
+        # Remove old marks
+        cursor.execute("DELETE FROM marks")
+        for student in students:
+            student_name = student[0]
+            assignment = int(request.form.get(f"assignment_{student_name}", 0))
+            quiz = int(request.form.get(f"quiz_{student_name}", 0))
+            total = assignment + quiz
+            if total >= 90:
+                grade = "A+"
+            elif total >= 80:
+                grade = "A"
+            elif total >= 70:
+                grade = "B"
+            elif total >= 60:
+                grade = "C"
+            elif total >= 50:
+                grade = "D"
+            else:
+                grade = "F"
+            cursor.execute("""
+            INSERT INTO marks
+            (student_name, assignment_marks, quiz_marks, total_marks, grade)
+            VALUES (?,?,?,?,?)
+            """, (
+                student_name,
+                assignment,
+                quiz,
+                total,
+                grade
+            ))
+        conn.commit()
+        return redirect("/teacher_dashboard")
+    return render_template(
+        "teacher_marks.html",
+        students=students
+    )
+@app.route("/teacher_attendance", methods=["GET", "POST"])
+def teacher_attendance():
+    if "teacher" not in session:
+        return redirect("/teacher")
+    if request.method == "POST":
+        cursor.execute("SELECT name FROM users")
+        students = cursor.fetchall()
+        today = datetime.now().strftime("%d-%m-%Y")
+        for student in students:
+            student_name = student[0]
+            status = request.form.get(student_name)
+            cursor.execute("""
+            INSERT INTO attendance
+            (student_name, attendance_date, status)
+            VALUES (?,?,?)
+            """, (
+                student_name,
+                today,
+                status
+            ))
+        conn.commit()
+        return redirect("/teacher_dashboard")
+    cursor.execute("SELECT name FROM users")
+    students = cursor.fetchall()
+    return render_template(
+        "teacher_attendance.html",
+        students=students
+    )
+@app.route("/teacher_materials", methods=["GET", "POST"])
+def teacher_materials():
+    if "teacher" not in session:
+        return redirect("/teacher")
+    if request.method == "POST":
+        course_name = request.form["course_name"]
+        material_title = request.form["material_title"]
+        file = request.files["material_file"]
+        if file:
+            filename = secure_filename(file.filename)
+            upload_folder = "static/uploads/materials"
+            os.makedirs(upload_folder, exist_ok=True)
+            file.save(os.path.join(upload_folder, filename))
+            cursor.execute("""
+            INSERT INTO study_materials
+            (course_name, material_title, file_name, uploaded_by, upload_date)
+            VALUES(?,?,?,?,?)
+            """,(
+                course_name,
+                material_title,
+                filename,
+                session["teacher"],
+                datetime.now().strftime("%d-%m-%Y")
+            ))
+            conn.commit()
+            return redirect("/teacher_dashboard")
+    return render_template("teacher_materials.html")
+@app.route("/study_materials")
+def study_materials():
+    if "user" not in session:
+        return redirect("/student")
+    cursor.execute("""
+    SELECT *
+    FROM study_materials
+    ORDER BY id DESC
+    """)
+    materials = cursor.fetchall()
+    return render_template(
+        "study_materials.html",
+        materials=materials
+    )
+@app.route("/download_material/<filename>")
+def download_material(filename):
+    return send_from_directory(
+        "static/uploads/materials",
+        filename,
+        as_attachment=True
+    )
+# ---------------- TEACHER COURSES ---------------- #
+@app.route("/teacher_courses")
+def teacher_courses():
+    if "teacher" not in session:
+        return redirect("/teacher")
+    cursor.execute("SELECT * FROM courses")
+    courses = cursor.fetchall()
+    return render_template(
+        "teacher_courses.html",
+        courses=courses
+    )
+# ---------------- ADD COURSE ---------------- #
+@app.route("/teacher_add_course", methods=["GET", "POST"])
+def teacher_add_course():
+    if "teacher" not in session:
+        return redirect("/teacher")
+    if request.method == "POST":
+        title = request.form["title"]
+        instructor = request.form["instructor"]
+        duration = request.form["duration"]
+        description = request.form["description"]
+        cursor.execute("""
+        INSERT INTO courses
+        (
+            title,
+            instructor,
+            duration,
+            description
+        )
+        VALUES
+        (
+            ?,
+            ?,
+            ?,
+            ?
+        )
+        """,
+        (
+            title,
+            instructor,
+            duration,
+            description
+        ))
+        conn.commit()
+        return redirect("/teacher_courses")
+    return render_template("teacher_add_course.html")
+# ---------------- TEACHER ASSIGNMENTS ---------------- #
+@app.route("/teacher_assignments")
+def teacher_assignments():
+    if "teacher" not in session:
+        return redirect("/teacher")
+    cursor.execute("SELECT * FROM assignments")
+    assignments = cursor.fetchall()
+    return render_template(
+        "teacher_assignments.html",
+        assignments=assignments
+    )
+# ---------------- ADD ASSIGNMENT ---------------- #
+@app.route("/teacher_add_assignment", methods=["GET", "POST"])
+def teacher_add_assignment():
+    if "teacher" not in session:
+        return redirect("/teacher")
+    if request.method == "POST":
+        title = request.form["title"]
+        due_date = request.form["due_date"]
+        description = request.form["description"]
+        cursor.execute("""
+        INSERT INTO assignments
+        (
+            title,
+            due_date,
+            description
+        )
+        VALUES
+        (
+            ?,
+            ?,
+            ?
+        )
+        """,
+        (
+            title,
+            due_date,
+            description
+        ))
+        conn.commit()
+        return redirect("/teacher_assignments")
+    return render_template("teacher_add_assignment.html")
+# ---------------- TEACHER QUIZ ---------------- #
+@app.route("/teacher_quiz")
+def teacher_quiz():
+    if "teacher" not in session:
+        return redirect("/teacher")
+    cursor.execute("SELECT * FROM quiz")
+    quizzes = cursor.fetchall()
+    return render_template(
+        "teacher_quiz.html",
+        quizzes=quizzes
+    )
+# ---------------- ADD QUIZ ---------------- #
+@app.route("/teacher_add_quiz", methods=["GET", "POST"])
+def teacher_add_quiz():
+    if "teacher" not in session:
+        return redirect("/teacher")
+    if request.method == "POST":
+        question = request.form["question"]
+        option1 = request.form["option1"]
+        option2 = request.form["option2"]
+        option3 = request.form["option3"]
+        option4 = request.form["option4"]
+        answer = request.form["answer"]
+        cursor.execute("""
+        INSERT INTO quiz
+        (
+            question,
+            option1,
+            option2,
+            option3,
+            option4,
+            answer
+        )
+        VALUES
+        (
+            ?,
+            ?,
+            ?,
+            ?,
+            ?,
+            ?
+        )
+        """,
+        (
+            question,
+            option1,
+            option2,
+            option3,
+            option4,
+            answer
+        ))
+        conn.commit()
+        return redirect("/teacher_quiz")
+    return render_template("teacher_add_quiz.html")
+# ---------------- TEACHER STUDENTS ---------------- #
+@app.route("/teacher_students")
+def teacher_students():
+    if "teacher" not in session:
+        return redirect("/teacher")
+    cursor.execute("SELECT * FROM users")
+    students = cursor.fetchall()
+    return render_template(
+        "teacher_students.html",
+        students=students
+    )
+# ---------------- SUBMITTED ASSIGNMENTS ---------------- #
+@app.route("/teacher_submissions")
+def teacher_submissions():
+    if "teacher" not in session:
+        return redirect("/teacher")
+    cursor.execute("""
+    SELECT
+        id,
+        student_name,
+        assignment_title,
+        file_name,
+        submission_date,
+        status
+    FROM submissions
+    """)
+    submissions = cursor.fetchall()
+    return render_template(
+        "teacher_submissions.html",
+        submissions=submissions
+    )
+# ---------------- QUIZ RESULTS ---------------- #
+@app.route("/teacher_quiz_results")
+def teacher_quiz_results():
+    if "teacher" not in session:
+        return redirect("/teacher")
+    cursor.execute("""
+    SELECT
+        student_name,
+        score,
+        total,
+        result
+    FROM quiz_results
+    """)
+    results = cursor.fetchall()
+    return render_template(
+        "teacher_quiz_results.html",
+        results=results
+    )
+# ---------------- DOWNLOAD ASSIGNMENT ---------------- #
+@app.route("/download/<filename>")
+def download(filename):
+    return send_from_directory(
+        app.config["UPLOAD_FOLDER"],
+        filename,
+        as_attachment=True
+    )
+# ==========================================================
+#                    ADMIN MODULE
+# ==========================================================
+# ---------------- ADMIN LOGIN ---------------- #
+@app.route("/admin", methods=["GET", "POST"])
+def admin():
+    if request.method == "POST":
+        email = request.form["email"]
+        password = request.form["password"]
+        cursor.execute("""
+        SELECT *
+        FROM admin
+        WHERE email=? AND password=?
+        """, (email, password))
+        admin = cursor.fetchone()
+        if admin:
+            session["admin"] = email
+            return redirect("/admin_dashboard")
+        return render_template(
+            "admin_login.html",
+            error="Invalid Admin Login"
+        )
+    return render_template("admin_login.html")
+# ---------------- ADMIN DASHBOARD ---------------- #
+@app.route("/admin_dashboard")
+def admin_dashboard():
+    if "admin" not in session:
+        return redirect("/admin")
+    cursor.execute("SELECT COUNT(*) FROM users")
+    total_students = cursor.fetchone()[0]
+    cursor.execute("SELECT COUNT(*) FROM teacher")
+    total_teachers = cursor.fetchone()[0]
+    cursor.execute("SELECT COUNT(*) FROM courses")
+    total_courses = cursor.fetchone()[0]
+    cursor.execute("SELECT COUNT(*) FROM assignments")
+    total_assignments = cursor.fetchone()[0]
+    cursor.execute("SELECT COUNT(*) FROM quiz")
+    total_quiz = cursor.fetchone()[0]
+    cursor.execute("SELECT COUNT(*) FROM submissions")
+    total_submissions = cursor.fetchone()[0]
+    return render_template(
+        "admin_dashboard.html",
+        total_students=total_students,
+        total_teachers=total_teachers,
+        total_courses=total_courses,
+        total_assignments=total_assignments,
+        total_quiz=total_quiz,
+        total_submissions=total_submissions
+    )
+@app.route("/marks_report")
+def marks_report():
+    cursor.execute("""
+    SELECT *
+    FROM marks
+    ORDER BY total_marks DESC
+    """)
+    data = cursor.fetchall()
+    return render_template(
+        "marks_report.html",
+        marks=data
+    )
+# ---------------- ADD COURSE ---------------- #
+@app.route("/add_course", methods=["GET", "POST"])
+def add_course():
+    if "admin" not in session:
+        return redirect("/admin")
+    if request.method == "POST":
+        title = request.form["title"]
+        instructor = request.form["instructor"]
+        duration = request.form["duration"]
+        description = request.form["description"]
+        cursor.execute("""
+        INSERT INTO courses
+        (title, instructor, duration, description)
+        VALUES (?, ?, ?, ?)
+        """,
+        (
+            title,
+            instructor,
+            duration,
+            description
+        ))
+        conn.commit()
+        return redirect("/manage_courses")
+    return render_template("add_course.html")
+# ---------------- MANAGE COURSES ---------------- #
+@app.route("/manage_courses")
+def manage_courses():
+    if "admin" not in session:
+        return redirect("/admin")
+    cursor.execute("SELECT * FROM courses")
+    courses = cursor.fetchall()
+    return render_template(
+        "manage_courses.html",
+        courses=courses
+    )
+# ---------------- EDIT COURSE ---------------- #
+@app.route("/edit_course/<int:id>", methods=["GET","POST"])
+def edit_course(id):
+    if "admin" not in session:
+        return redirect("/admin")
+    if request.method == "POST":
+        title = request.form["title"]
+        instructor = request.form["instructor"]
+        duration = request.form["duration"]
+        description = request.form["description"]
+        cursor.execute("""
+        UPDATE courses
+        SET
+            title=?,
+            instructor=?,
+            duration=?,
+            description=?
+        WHERE id=?
+        """,
+        (
+            title,
+            instructor,
+            duration,
+            description,
+            id
+        ))
+        conn.commit()
+        return redirect("/manage_courses")
+    cursor.execute(
+        "SELECT * FROM courses WHERE id=?",
+        (id,)
+    )
+    course = cursor.fetchone()
+    return render_template(
+        "edit_course.html",
+        course=course
+    )
+# ---------------- DELETE COURSE ---------------- #
+@app.route("/delete_course/<int:id>")
+def delete_course(id):
+    if "admin" not in session:
+        return redirect("/admin")
+    cursor.execute(
+        "DELETE FROM courses WHERE id=?",
+        (id,)
+    )
+    conn.commit()
+    return redirect("/manage_courses")
+# ==========================================================
+#             ADMIN - MANAGE ASSIGNMENTS
+# ==========================================================
+# ---------------- ADD ASSIGNMENT ---------------- #
+@app.route("/add_assignment", methods=["GET", "POST"])
+def add_assignment():
+    if "admin" not in session:
+        return redirect("/admin")
+    if request.method == "POST":
+        title = request.form["title"]
+        due_date = request.form["due_date"]
+        description = request.form["description"]
+        cursor.execute("""
+        INSERT INTO assignments
+        (title, due_date, description)
+        VALUES (?, ?, ?)
+        """, (title, due_date, description))
+        conn.commit()
+        return redirect("/manage_assignments")
+    return render_template("add_assignment.html")
+# ---------------- MANAGE ASSIGNMENTS ---------------- #
+@app.route("/manage_assignments")
+def manage_assignments():
+    if "admin" not in session:
+        return redirect("/admin")
+    cursor.execute("SELECT * FROM assignments")
+    assignments = cursor.fetchall()
+    return render_template(
+        "manage_assignments.html",
+        assignments=assignments
+    )
+# ---------------- EDIT ASSIGNMENT ---------------- #
+@app.route("/edit_assignment/<int:id>", methods=["GET", "POST"])
+def edit_assignment(id):
+    if "admin" not in session:
+        return redirect("/admin")
+    if request.method == "POST":
+        title = request.form["title"]
+        due_date = request.form["due_date"]
+        description = request.form["description"]
+        cursor.execute("""
+        UPDATE assignments
+        SET title=?,
+            due_date=?,
+            description=?
+        WHERE id=?
+        """, (title, due_date, description, id))
+        conn.commit()
+        return redirect("/manage_assignments")
+    cursor.execute(
+        "SELECT * FROM assignments WHERE id=?",
+        (id,)
+    )
+    assignment = cursor.fetchone()
+    return render_template(
+        "edit_assignment.html",
+        assignment=assignment
+    )
+# ---------------- DELETE ASSIGNMENT ---------------- #
+@app.route("/delete_assignment/<int:id>")
+def delete_assignment(id):
+    if "admin" not in session:
+        return redirect("/admin")
+    cursor.execute(
+        "DELETE FROM assignments WHERE id=?",
+        (id,)
+    )
+    conn.commit()
+    return redirect("/manage_assignments")
+# ==========================================================
+#                ADMIN - MANAGE QUIZ
+# ==========================================================
+# ---------------- ADD QUIZ ---------------- #
+@app.route("/add_quiz", methods=["GET", "POST"])
+def add_quiz():
+    if "admin" not in session:
+        return redirect("/admin")
+    if request.method == "POST":
+        question = request.form["question"]
+        option1 = request.form["option1"]
+        option2 = request.form["option2"]
+        option3 = request.form["option3"]
+        option4 = request.form["option4"]
+        answer = request.form["answer"]
+        cursor.execute("""
+        INSERT INTO quiz
+        (question, option1, option2, option3, option4, answer)
+        VALUES (?, ?, ?, ?, ?, ?)
+        """,
+        (
+            question,
+            option1,
+            option2,
+            option3,
+            option4,
+            answer
+        ))
+        conn.commit()
+        return redirect("/manage_quiz")
+    return render_template("add_quiz.html")
+# ---------------- MANAGE QUIZ ---------------- #
+@app.route("/manage_quiz")
+def manage_quiz():
+    if "admin" not in session:
+        return redirect("/admin")
+    cursor.execute("SELECT * FROM quiz")
+    quiz = cursor.fetchall()
+    return render_template(
+        "manage_quiz.html",
+        quiz=quiz
+    )
+# ---------------- EDIT QUIZ ---------------- #
+@app.route("/edit_quiz/<int:id>", methods=["GET", "POST"])
+def edit_quiz(id):
+    if "admin" not in session:
+        return redirect("/admin")
+    if request.method == "POST":
+        question = request.form["question"]
+        option1 = request.form["option1"]
+        option2 = request.form["option2"]
+        option3 = request.form["option3"]
+        option4 = request.form["option4"]
+        answer = request.form["answer"]
+        cursor.execute("""
+        UPDATE quiz
+        SET question=?,
+            option1=?,
+            option2=?,
+            option3=?,
+            option4=?,
+            answer=?
+        WHERE id=?
+        """,
+        (
+            question,
+            option1,
+            option2,
+            option3,
+            option4,
+            answer,
+            id
+        ))
+        conn.commit()
+        return redirect("/manage_quiz")
+    cursor.execute(
+        "SELECT * FROM quiz WHERE id=?",
+        (id,)
+    )
+    quiz = cursor.fetchone()
+    return render_template(
+        "edit_quiz.html",
+        quiz=quiz
+    )
+# ---------------- DELETE QUIZ ---------------- #
+@app.route("/delete_quiz/<int:id>")
+def delete_quiz(id):
+    if "admin" not in session:
+        return redirect("/admin")
+    cursor.execute(
+        "DELETE FROM quiz WHERE id=?",
+        (id,)
+    )
+    conn.commit()
+    return redirect("/manage_quiz")
+# ==========================================================
+#              ADMIN - MANAGE STUDENTS
+# ==========================================================
+@app.route("/manage_students")
+def manage_students():
+    if "admin" not in session:
+        return redirect("/admin")
+    cursor.execute("""
+    SELECT
+        id,
+        name,
+        email
+    FROM users
+    """)
+    students = cursor.fetchall()
+    return render_template(
+        "manage_students.html",
+        students=students
+    )
+@app.route("/delete_student/<int:id>")
+def delete_student(id):
+    if "admin" not in session:
+        return redirect("/admin")
+    cursor.execute(
+        "DELETE FROM users WHERE id=?",
+        (id,)
+    )
+    conn.commit()
+    return redirect("/manage_students")
+# ==========================================================
+#                     REPORTS
+# ==========================================================
+@app.route("/reports")
+def reports():
+    if "admin" not in session:
+        return redirect("/admin")
+    cursor.execute("SELECT COUNT(*) FROM users")
+    total_students = cursor.fetchone()[0]
+    cursor.execute("SELECT COUNT(*) FROM courses")
+    total_courses = cursor.fetchone()[0]
+    cursor.execute("SELECT COUNT(*) FROM assignments")
+    total_assignments = cursor.fetchone()[0]
+    cursor.execute("SELECT COUNT(*) FROM quiz")
+    total_quiz = cursor.fetchone()[0]
+    return render_template(
+        "reports.html",
+        total_students=total_students,
+        total_courses=total_courses,
+        total_assignments=total_assignments,
+        total_quiz=total_quiz
+    )
+# ==========================================================
+#                  CERTIFICATE DOWNLOAD
+# ==========================================================
+@app.route("/certificate")
+def certificate():
+    if "user" not in session:
+        return redirect("/student")
+    student = session["user"]
+    cursor.execute("""
+        SELECT score, total, result
+        FROM quiz_results
+        WHERE student_name=?
+        ORDER BY id DESC
+        LIMIT 1
+    """, (student,))
+    quiz = cursor.fetchone()
+    if quiz is None:
+        return "No Quiz Result Found."
+    score = quiz[0]
+    total = quiz[1]
+    result = quiz[2]
+    if result != "PASS":
+        return "Certificate is available only for PASS students."
+    today = datetime.now().strftime("%d-%m-%Y")
+    certificate_id = "LMS-" + datetime.now().strftime("%Y%m%d%H%M%S")
+    pdf = canvas.Canvas("certificate.pdf")
+    width = 595
+    height = 842
+    # Outer Border
+    pdf.setLineWidth(4)
+    pdf.rect(25, 25, width-50, height-50)
+    pdf.setLineWidth(1.5)
+    pdf.rect(35, 35, width-70, height-70)
+    # LMS Header
+    pdf.setFont("Helvetica-Bold", 24)
+    pdf.drawCentredString(
+        width/2,
+        780,
+        "ONLINE LEARNING MANAGEMENT SYSTEM"
+    )
+    pdf.setFont("Helvetica", 14)
+    pdf.drawCentredString(
+        width/2,
+        755,
+        "Certificate Verification & Achievement Portal"
+    )
+    pdf.line(80, 735, 515, 735)
+    # Certificate Title
+    pdf.setFont("Helvetica-Bold", 32)
+    pdf.drawCentredString(
+        width/2,
+        690,
+        "CERTIFICATE"
+    )
+    pdf.setFont("Helvetica-Bold", 20)
+    pdf.drawCentredString(
+        width/2,
+        660,
+        "OF COMPLETION"
+    )
+    # Certificate Text
+    pdf.setFont("Helvetica", 16)
+    pdf.drawCentredString(
+        width/2,
+        610,
+        "This Certificate is Proudly Presented To"
+    )
+    # Student Name
+    pdf.setFont("Helvetica-Bold", 30)
+    pdf.drawCentredString(
+        width/2,
+        560,
+        student
+    )
+    pdf.setFont("Helvetica", 16)
+    pdf.drawCentredString(
+        width/2,
+        510,
+        "For Successfully Completing"
+    )
+    # Course Name
+    pdf.setFont("Helvetica-Bold", 20)
+    pdf.drawCentredString(
+        width/2,
+        480,
+        "Python Programming"
+    )
+    # Quiz Result
+    pdf.setFont("Helvetica-Bold", 18)
+    pdf.drawCentredString(
+        width/2,
+        430,
+        f"Quiz Score : {score} / {total}"
+    )
+    pdf.drawCentredString(
+        width/2,
+        400,
+        "Result : PASS"
+    )
+    # Appreciation Message
+    pdf.setFont("Helvetica", 13)
+    pdf.drawCentredString(
+        width/2,
+        350,
+        "Your dedication, hard work and commitment"
+    )
+    pdf.drawCentredString(
+        width/2,
+        330,
+        "towards learning are truly appreciated."
+    )
+    pdf.drawCentredString(
+        width/2,
+        310,
+        "We congratulate you on successfully"
+    )
+    pdf.drawCentredString(
+        width/2,
+        290,
+        "completing this course."
+    )
+    pdf.line(120, 260, 475, 260)
+    # Certificate Details
+    pdf.setFont("Helvetica", 12)
+    pdf.drawCentredString(
+        width/2,
+        225,
+        f"Certificate ID : {certificate_id}"
+    )
+    pdf.drawCentredString(
+        width/2,
+        205,
+        f"Issue Date : {today}"
+    )
+    # Signatures
+    pdf.line(80, 140, 220, 140)
+    pdf.line(375, 140, 515, 140)
+    pdf.setFont("Helvetica-Bold", 12)
+    pdf.drawCentredString(
+        150,
+        120,
+        "Instructor"
+    )
+    pdf.drawCentredString(
+        445,
+        120,
+        "LMS Administrator"
+    )
+    # Footer
+    pdf.setFont("Helvetica-Oblique", 10)
+    pdf.drawCentredString(
+        width/2,
+        70,
+        "This certificate is computer generated and does not require a physical signature."
+    )
+    pdf.save()
+    return send_file(
+        "certificate.pdf",
+        as_attachment=True,
+        download_name="Certificate.pdf"
+    )
+@app.route("/leave_apply", methods=["GET","POST"])
+def leave_apply():
+    if request.method == "POST":
+        leave_type = request.form["leave_type"]
+        reason = request.form["reason"]
+        from_date = request.form["from_date"]
+        to_date = request.form["to_date"]
+        student_name = session["user"]
+        cursor.execute("""
+        INSERT INTO leave_requests(
+        student_name,
+        leave_type,
+        reason,
+        from_date,
+        to_date
+        )
+        VALUES(?,?,?,?,?)
+        """,(
+            student_name,
+            leave_type,
+            reason,
+            from_date,
+            to_date
+        ))
+        conn.commit()
+        return redirect("/dashboard")
+    return render_template("leave_apply.html")
+@app.route("/leave_status")
+def leave_status():
+    student_name = session["user"]
+    cursor.execute("""
+    SELECT *
+    FROM leave_requests
+    WHERE student_name=?
+    """,(student_name,))
+    leaves = cursor.fetchall()
+    return render_template(
+        "leave_status.html",
+        leaves=leaves
+    )
+@app.route("/teacher_leave")
+def teacher_leave():
+    cursor.execute("SELECT * FROM leave_requests")
+    leaves = cursor.fetchall()
+    return render_template(
+        "teacher_leave.html",
+        leaves=leaves
+    )
+@app.route("/approve_leave/<int:id>")
+def approve_leave(id):
+    cursor.execute("""
+    UPDATE leave_requests
+    SET status='Approved'
+    WHERE id=?
+    """,(id,))
+    conn.commit()
+    return redirect("/teacher_leave")
+@app.route("/reject_leave/<int:id>")
+def reject_leave(id):
+    cursor.execute("""
+    UPDATE leave_requests
+    SET status='Rejected'
+    WHERE id=?
+    """,(id,))
+    conn.commit()
+    return redirect("/teacher_leave")
+@app.route("/add_notification", methods=["GET","POST"])
+def add_notification():
+    if request.method == "POST":
+        title = request.form["title"]
+        message = request.form["message"]
+        cursor.execute("""
+        INSERT INTO notifications
+        (title,message,created_at)
+        VALUES(?,?,DATE('now'))
+        """,(title,message))
+        conn.commit()
+        return "Notification Added Successfully"
+    return render_template(
+        "add_notification.html"
+    )
+@app.route("/notifications")
+def notifications():
+    cursor.execute("""
+    SELECT *
+    FROM notifications
+    ORDER BY id DESC
+    """)
+    notifications = cursor.fetchall()
+    return render_template(
+        "notifications.html",
+        notifications=notifications
+    )
+@app.route("/progress")
+def progress():
+    student_name = session["user"]
+    cursor.execute("""
+    SELECT *
+    FROM student_progress
+    WHERE student_name=?
+    """,(student_name,))
+    progress = cursor.fetchone()
+    return render_template(
+        "progress.html",
+        progress=progress
+    )
+@app.route("/add_progress", methods=["GET","POST"])
+def add_progress():
+    if request.method == "POST":
+        student_name = request.form["student_name"]
+        assignments_completed = request.form["assignments_completed"]
+        total_assignments = request.form["total_assignments"]
+        attendance_percentage = request.form["attendance_percentage"]
+        quiz_score = request.form["quiz_score"]
+        performance = request.form["performance"]
+        cursor.execute("""
+        INSERT INTO student_progress
+        (
+        student_name,
+        assignments_completed,
+        total_assignments,
+        attendance_percentage,
+        quiz_score,
+        performance
+        )
+        VALUES(?,?,?,?,?,?)
+        """,(
+            student_name,
+            assignments_completed,
+            total_assignments,
+            attendance_percentage,
+            quiz_score,
+            performance
+        ))
+        conn.commit()
+        return "Progress Added Successfully"
+    return render_template("add_progress.html")
+@app.route("/add_event", methods=["GET","POST"])
+def add_event():
+    if request.method == "POST":
+        event_name = request.form["event_name"]
+        event_date = request.form["event_date"]
+        description = request.form["description"]
+        cursor.execute("""
+        INSERT INTO academic_calendar
+        (event_name,event_date,description)
+        VALUES(?,?,?)
+        """,(
+            event_name,
+            event_date,
+            description
+        ))
+        conn.commit()
+        return "Event Added Successfully"
+    return render_template("add_event.html")
+@app.route("/academic_calendar")
+def academic_calendar():
+    cursor.execute("""
+    SELECT *
+    FROM academic_calendar
+    ORDER BY event_date ASC
+    """)
+    events = cursor.fetchall()
+    return render_template(
+        "academic_calendar.html",
+        events=events
+    )
+@app.route("/feedback", methods=["GET","POST"])
+def feedback():
+    if request.method == "POST":
+        student_name = session["user"]
+        course_name = request.form["course_name"]
+        rating = request.form["rating"]
+        feedback_text = request.form["feedback"]
+        cursor.execute("""
+        INSERT INTO feedback
+        (student_name,course_name,rating,feedback)
+        VALUES(?,?,?,?)
+        """,(
+            student_name,
+            course_name,
+            rating,
+            feedback_text
+        ))
+        conn.commit()
+        return "Feedback Submitted Successfully"
+    return render_template("feedback.html")
+# ==========================================================
+#                       LOGOUT
+# ==========================================================
+@app.route("/logout")
+def logout():
+    session.pop("user", None)
+    session.pop("teacher", None)
+    session.pop("admin", None)
+    return redirect("/")
+# ==========================================================
+#                      RUN APPLICATION
+# ==========================================================
+if __name__ == "__main__":
+    app.run(
+        debug=True
+    )
+[NormalWeb] database.py
+from flask import Flask, render_template, request, redirect, session
+from flask import send_from_directory, send_file
+from flask import flash, url_for
+from database import conn, cursor
+import os
+import sqlite3
+import random
+from werkzeug.utils import secure_filename
+from reportlab.pdfgen import canvas
+from datetime import datetime
+app = Flask(__name__)
+app.secret_key = "your_secret_key"
+# ---------------- Upload Folder ---------------- #
+UPLOAD_FOLDER = "uploads"
+PROFILE_FOLDER = "static/profile"
+app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
+app.config["PROFILE_FOLDER"] = PROFILE_FOLDER
+os.makedirs(UPLOAD_FOLDER, exist_ok=True)
+os.makedirs(PROFILE_FOLDER, exist_ok=True)
+# ---------------- HOME ---------------- #
+@app.route("/")
+def home():
+    return render_template("index.html")
+# ---------------- STUDENT LOGIN ---------------- #
+@app.route("/student", methods=["GET","POST"])
+def login():
+    if request.method == "POST":
+        email = request.form["email"].strip()
+        password = request.form["password"]
+        cursor.execute(
+            """
+            SELECT *
+            FROM users
+            WHERE email=? AND password=?
+            """,
+            (email,password)
+        )
+        user = cursor.fetchone()
+        if user:
+            session["user"] = user[1]
+            return redirect("/dashboard")
+        return render_template(
+            "login.html",
+            error="Invalid Email or Password"
+        )
+    return render_template("login.html")
+# ---------------- REGISTER ---------------- #
+@app.route("/register", methods=["GET","POST"])
+def register():
+    if request.method == "POST":
+        name = request.form["name"].strip()
+        email = request.form["email"].strip()
+        password = request.form["password"]
+        try:
+            cursor.execute(
+                """
+                INSERT INTO users
+                (name,email,password)
+                VALUES(?,?,?)
+                """,
+                (name,email,password)
+            )
+            conn.commit()
+            return redirect("/")
+        except sqlite3.IntegrityError:
+            return render_template(
+                "register.html",
+                error="Email already exists."
+            )
+    return render_template("register.html")
+# ---------------- FORGOT PASSWORD ---------------- #
+@app.route("/forgot_password", methods=["GET","POST"])
+def forgot_password():
+    if request.method == "POST":
+        email = request.form["email"].strip()
+        cursor.execute(
+            "SELECT * FROM users WHERE email=?",
+            (email,)
+        )
+        user = cursor.fetchone()
+        if user:
+            otp = str(random.randint(100000,999999))
+            session["otp"] = otp
+            session["email"] = email
+            print("="*40)
+            print(" LMS PASSWORD RESET OTP ")
+            print("="*40)
+            print("EMAIL :",email)
+            print("OTP   :",otp)
+            print("="*40)
+            return redirect("/verify_otp")
+        return render_template(
+            "forgot_password.html",
+            error="Email not found."
+        )
+    return render_template("forgot_password.html")
+# ---------------- VERIFY OTP ---------------- #
+@app.route("/verify_otp", methods=["GET","POST"])
+def verify_otp():
+    if request.method=="POST":
+        otp=request.form["otp"]
+        if otp==session.get("otp"):
+            return redirect("/reset_password")
+        flash("Invalid OTP","danger")
+    return render_template("verify_otp.html")
+# ---------------- RESET PASSWORD ---------------- #
+@app.route("/reset_password", methods=["GET","POST"])
+def reset_password():
+    if request.method=="POST":
+        password=request.form["password"]
+        confirm=request.form["confirm_password"]
+        if password!=confirm:
+            flash("Passwords do not match","danger")
+            return redirect("/reset_password")
+        email=session.get("email")
+        cursor.execute(
+            """
+            UPDATE users
+            SET password=?
+            WHERE email=?
+            """,
+            (password,email)
+        )
+        conn.commit()
+        session.pop("otp",None)
+        session.pop("email",None)
+        flash("Password Updated Successfully","success")
+        return redirect("/student")
+    return render_template("reset_password.html")
+# ---------------- DASHBOARD ---------------- #
+@app.route("/dashboard")
+def dashboard():
+    if "user" not in session:
+        return redirect("/")
+    username = session["user"]
+    cursor.execute("""
+    SELECT title, message, created_at
+    FROM notifications
+    ORDER BY id DESC
+    LIMIT 5
+    """)
+    notifications = cursor.fetchall()
+    return render_template(
+        "dashboard.html",
+        username=username,
+        notifications=notifications
+    )
+@app.route("/attendance")
+def attendance():
+    if "user" not in session:
+        return redirect("/")
+    username = session["user"]
+    cursor.execute("""
+    SELECT *
+    FROM attendance
+    WHERE student_name=?
+    ORDER BY id DESC
+    """, (username,))
+    records = cursor.fetchall()
+    total = len(records)
+    present = sum(1 for r in records if r[3] == "Present")
+    percentage = 0
+    if total > 0:
+        percentage = round((present / total) * 100, 2)
+    return render_template(
+        "attendance.html",
+        attendance=records,
+        percentage=percentage
+    )
+@app.route("/marks")
+def marks():
+    if "user" not in session:
+        return redirect("/student")
+    username = session["user"]
+    cursor.execute("""
+    SELECT *
+    FROM marks
+    WHERE student_name=?
+    """,(username,))
+    data = cursor.fetchone()
+    return render_template(
+        "marks.html",
+        marks=data
+    )
+# ---------------- COURSES ---------------- #
+@app.route("/courses")
+def courses():
+    if "user" not in session:
+        return redirect("/student")
+    cursor.execute("SELECT * FROM courses")
+    course_list = cursor.fetchall()
+    return render_template(
+        "courses.html",
+        courses=course_list
+    )
+@app.route("/enroll_course/<course_name>")
+def enroll_course(course_name):
+    if "user" not in session:
+        return redirect("/student")
+    student = session["user"]
+    cursor.execute("""
+    INSERT INTO enrollments
+    (student_name, course_name, enrollment_date)
+    VALUES (?, ?, date('now'))
+    """, (student, course_name))
+    conn.commit()
+    return redirect("/my_courses")
+@app.route("/my_courses")
+def my_courses():
+    if "user" not in session:
+        return redirect("/student")
+    student = session["user"]
+    cursor.execute("""
+    SELECT * FROM enrollments
+    WHERE student_name=?
+    """, (student,))
+    courses = cursor.fetchall()
+    return render_template(
+        "my_courses.html",
+        courses=courses
+    )
+# ---------------- ASSIGNMENTS ---------------- #
+@app.route("/assignments")
+def assignments():
+    if "user" not in session:
+        return redirect("/student")
+    student = session["user"]
+    cursor.execute("SELECT * FROM assignments")
+    assignment_list = cursor.fetchall()
+    assignment_data = []
+    for assignment in assignment_list:
+        cursor.execute("""
+        SELECT status
+        FROM submissions
+        WHERE student_name=? AND assignment_title=?
+        """, (student, assignment[1]))
+        result = cursor.fetchone()
+        status = result[0] if result else "Pending"
+        assignment_data.append({
+            "id": assignment[0],
+            "title": assignment[1],
+            "due_date": assignment[2],
+            "description": assignment[3],
+            "status": status
+        })
+    return render_template(
+        "assignments.html",
+        assignments=assignment_data
+    )
+# ---------------- SUBMIT ASSIGNMENT ---------------- #
+@app.route("/submit_assignment/<int:id>", methods=["GET","POST"])
+def submit_assignment(id):
+    if "user" not in session:
+        return redirect("/student")
+    cursor.execute(
+        "SELECT * FROM assignments WHERE id=?",
+        (id,)
+    )
+    assignment = cursor.fetchone()
+    if request.method == "POST":
+        student = session["user"]
+        file = request.files["assignment_file"]
+        if file.filename == "":
+            return "Please select a file."
+        filename = secure_filename(file.filename)
+        file.save(
+            os.path.join(
+                app.config["UPLOAD_FOLDER"],
+                filename
+            )
+        )
+        cursor.execute("""
+        INSERT INTO submissions
+        (
+            student_name,
+            assignment_title,
+            file_name,
+            submission_date,
+            status
+        )
+        VALUES
+        (
+            ?,
+            ?,
+            ?,
+            date('now'),
+            ?
+        )
+        """,
+        (
+            student,
+            assignment[1],
+            filename,
+            "Submitted"
+        ))
+        conn.commit()
+        return redirect("/assignments")
+    return render_template(
+        "submit_assignment.html",
+        assignment=assignment
+    )
+# ---------------- QUIZ ---------------- #
+@app.route("/quiz", methods=["GET","POST"])
+def quiz():
+    if "user" not in session:
+        return redirect("/student")
+    cursor.execute("SELECT * FROM quiz")
+    questions = cursor.fetchall()
+    score = None
+    total = len(questions)
+    result = None
+    if request.method == "POST":
+        score = 0
+        for q in questions:
+            answer = request.form.get(f"q{q[0]}")
+            if answer == q[6]:
+                score += 1
+        student = session["user"]
+        result = "PASS" if score >= total/2 else "FAIL"
+        cursor.execute("""
+        INSERT INTO quiz_results
+        (
+            student_name,
+            score,
+            total,
+            result
+        )
+        VALUES
+        (
+            ?,
+            ?,
+            ?,
+            ?
+        )
+        """,
+        (
+            student,
+            score,
+            total,
+            result
+        ))
+        conn.commit()
+    return render_template(
+        "quiz.html",
+        questions=questions,
+        score=score,
+        total=total,
+        result=result
+    )
+# ---------------- PROFILE ---------------- #
+@app.route("/profile", methods=["GET","POST"])
+def profile():
+    if "user" not in session:
+        return redirect("/student")
+    username = session["user"]
+    cursor.execute(
+        "SELECT email FROM users WHERE name=?",
+        (username,)
+    )
+    user = cursor.fetchone()
+    if not user:
+        return redirect("/student")
+    email = user[0]
+    if request.method == "POST":
+        phone = request.form["phone"]
+        department = request.form["department"]
+        cursor.execute(
+            "SELECT * FROM profile WHERE email=?",
+            (email,)
+        )
+        data = cursor.fetchone()
+        if data:
+            cursor.execute("""
+            UPDATE profile
+            SET phone=?,
+                department=?
+            WHERE email=?
+            """,
+            (
+                phone,
+                department,
+                email
+            ))
+        else:
+            cursor.execute("""
+            INSERT INTO profile
+            (
+                email,
+                phone,
+                department
+            )
+            VALUES
+            (
+                ?,
+                ?,
+                ?
+            )
+            """,
+            (
+                email,
+                phone,
+                department
+            ))
+        conn.commit()
+        return redirect("/profile")
+    cursor.execute("""
+    SELECT
+        phone,
+        department,
+        photo
+    FROM profile
+    WHERE email=?
+    """,
+    (email,)
+    )
+    data = cursor.fetchone()
+    if data:
+        phone = data[0]
+        department = data[1]
+        photo = data[2]
+    else:
+        phone = ""
+        department = ""
+        photo = ""
+    student = {
+        "name": username,
+        "email": email,
+        "phone": phone,
+        "department": department,
+        "register_no": "N/A",
+        "joined_date": "2026",
+        "photo": photo
+    }
+    return render_template(
+        "profile.html",
+        user=student
+    )
+# ---------------- PROFILE PHOTO ---------------- #
+@app.route("/upload_photo", methods=["POST"])
+def upload_photo():
+    if "user" not in session:
+        return redirect("/student")
+    username = session["user"]
+    cursor.execute(
+        "SELECT email FROM users WHERE name=?",
+        (username,)
+    )
+    email = cursor.fetchone()[0]
+    file = request.files["photo"]
+    if file.filename != "":
+        filename = secure_filename(file.filename)
+        file.save(
+            os.path.join(
+                app.config["PROFILE_FOLDER"],
+                filename
+            )
+        )
+        cursor.execute(
+            "SELECT * FROM profile WHERE email=?",
+            (email,)
+        )
+        data = cursor.fetchone()
+        if data:
+            cursor.execute("""
+            UPDATE profile
+            SET photo=?
+            WHERE email=?
+            """,
+            (
+                filename,
+                email
+            ))
+        else:
+            cursor.execute("""
+            INSERT INTO profile
+            (
+                email,
+                photo
+            )
+            VALUES
+            (
+                ?,
+                ?
+            )
+            """,
+            (
+                email,
+                filename
+            ))
+        conn.commit()
+    return redirect("/profile")
+# ==========================================================
+#                   TEACHER MODULE
+# ==========================================================
+# ---------------- TEACHER LOGIN ---------------- #
+@app.route("/teacher", methods=["GET", "POST"])
+def teacher():
+    if request.method == "POST":
+        email = request.form["email"]
+        password = request.form["password"]
+        cursor.execute(
+            """
+            SELECT *
+            FROM teacher
+            WHERE email=? AND password=?
+            """,
+            (email, password)
+        )
+        teacher = cursor.fetchone()
+        if teacher:
+            session["teacher"] = teacher[1]
+            return redirect("/teacher_dashboard")
+        return render_template(
+            "teacher_login.html",
+            error="Invalid Email or Password"
+        )
+    return render_template("teacher_login.html")
+# ---------------- TEACHER DASHBOARD ---------------- #
+@app.route("/teacher_dashboard")
+def teacher_dashboard():
+    if "teacher" not in session:
+        return redirect("/teacher")
+    cursor.execute("SELECT COUNT(*) FROM courses")
+    total_courses = cursor.fetchone()[0]
+    cursor.execute("SELECT COUNT(*) FROM assignments")
+    total_assignments = cursor.fetchone()[0]
+    cursor.execute("SELECT COUNT(*) FROM quiz")
+    total_quiz = cursor.fetchone()[0]
+    cursor.execute("SELECT COUNT(*) FROM users")
+    total_students = cursor.fetchone()[0]
+    return render_template(
+        "teacher_dashboard.html",
+        teacher=session["teacher"],
+        total_courses=total_courses,
+        total_assignments=total_assignments,
+        total_quiz=total_quiz,
+        total_students=total_students
+    )
+@app.route("/teacher_marks", methods=["GET", "POST"])
+def teacher_marks():
+    if "teacher" not in session:
+        return redirect("/teacher")
+    cursor.execute("SELECT name FROM users")
+    students = cursor.fetchall()
+    if request.method == "POST":
+        # Remove old marks
+        cursor.execute("DELETE FROM marks")
+        for student in students:
+            student_name = student[0]
+            assignment = int(request.form.get(f"assignment_{student_name}", 0))
+            quiz = int(request.form.get(f"quiz_{student_name}", 0))
+            total = assignment + quiz
+            if total >= 90:
+                grade = "A+"
+            elif total >= 80:
+                grade = "A"
+            elif total >= 70:
+                grade = "B"
+            elif total >= 60:
+                grade = "C"
+            elif total >= 50:
+                grade = "D"
+            else:
+                grade = "F"
+            cursor.execute("""
+            INSERT INTO marks
+            (student_name, assignment_marks, quiz_marks, total_marks, grade)
+            VALUES (?,?,?,?,?)
+            """, (
+                student_name,
+                assignment,
+                quiz,
+                total,
+                grade
+            ))
+        conn.commit()
+        return redirect("/teacher_dashboard")
+    return render_template(
+        "teacher_marks.html",
+        students=students
+    )
+@app.route("/teacher_attendance", methods=["GET", "POST"])
+def teacher_attendance():
+    if "teacher" not in session:
+        return redirect("/teacher")
+    if request.method == "POST":
+        cursor.execute("SELECT name FROM users")
+        students = cursor.fetchall()
+        today = datetime.now().strftime("%d-%m-%Y")
+        for student in students:
+            student_name = student[0]
+            status = request.form.get(student_name)
+            cursor.execute("""
+            INSERT INTO attendance
+            (student_name, attendance_date, status)
+            VALUES (?,?,?)
+            """, (
+                student_name,
+                today,
+                status
+            ))
+        conn.commit()
+        return redirect("/teacher_dashboard")
+    cursor.execute("SELECT name FROM users")
+    students = cursor.fetchall()
+    return render_template(
+        "teacher_attendance.html",
+        students=students
+    )
+@app.route("/teacher_materials", methods=["GET", "POST"])
+def teacher_materials():
+    if "teacher" not in session:
+        return redirect("/teacher")
+    if request.method == "POST":
+        course_name = request.form["course_name"]
+        material_title = request.form["material_title"]
+        file = request.files["material_file"]
+        if file:
+            filename = secure_filename(file.filename)
+            upload_folder = "static/uploads/materials"
+            os.makedirs(upload_folder, exist_ok=True)
+            file.save(os.path.join(upload_folder, filename))
+            cursor.execute("""
+            INSERT INTO study_materials
+            (course_name, material_title, file_name, uploaded_by, upload_date)
+            VALUES(?,?,?,?,?)
+            """,(
+                course_name,
+                material_title,
+                filename,
+                session["teacher"],
+                datetime.now().strftime("%d-%m-%Y")
+            ))
+            conn.commit()
+            return redirect("/teacher_dashboard")
+    return render_template("teacher_materials.html")
+@app.route("/study_materials")
+def study_materials():
+    if "user" not in session:
+        return redirect("/student")
+    cursor.execute("""
+    SELECT *
+    FROM study_materials
+    ORDER BY id DESC
+    """)
+    materials = cursor.fetchall()
+    return render_template(
+        "study_materials.html",
+        materials=materials
+    )
+@app.route("/download_material/<filename>")
+def download_material(filename):
+    return send_from_directory(
+        "static/uploads/materials",
+        filename,
+        as_attachment=True
+    )
+# ---------------- TEACHER COURSES ---------------- #
+@app.route("/teacher_courses")
+def teacher_courses():
+    if "teacher" not in session:
+        return redirect("/teacher")
+    cursor.execute("SELECT * FROM courses")
+    courses = cursor.fetchall()
+    return render_template(
+        "teacher_courses.html",
+        courses=courses
+    )
+# ---------------- ADD COURSE ---------------- #
+@app.route("/teacher_add_course", methods=["GET", "POST"])
+def teacher_add_course():
+    if "teacher" not in session:
+        return redirect("/teacher")
+    if request.method == "POST":
+        title = request.form["title"]
+        instructor = request.form["instructor"]
+        duration = request.form["duration"]
+        description = request.form["description"]
+        cursor.execute("""
+        INSERT INTO courses
+        (
+            title,
+            instructor,
+            duration,
+            description
+        )
+        VALUES
+        (
+            ?,
+            ?,
+            ?,
+            ?
+        )
+        """,
+        (
+            title,
+            instructor,
+            duration,
+            description
+        ))
+        conn.commit()
+        return redirect("/teacher_courses")
+    return render_template("teacher_add_course.html")
+# ---------------- TEACHER ASSIGNMENTS ---------------- #
+@app.route("/teacher_assignments")
+def teacher_assignments():
+    if "teacher" not in session:
+        return redirect("/teacher")
+    cursor.execute("SELECT * FROM assignments")
+    assignments = cursor.fetchall()
+    return render_template(
+        "teacher_assignments.html",
+        assignments=assignments
+    )
+# ---------------- ADD ASSIGNMENT ---------------- #
+@app.route("/teacher_add_assignment", methods=["GET", "POST"])
+def teacher_add_assignment():
+    if "teacher" not in session:
+        return redirect("/teacher")
+    if request.method == "POST":
+        title = request.form["title"]
+        due_date = request.form["due_date"]
+        description = request.form["description"]
+        cursor.execute("""
+        INSERT INTO assignments
+        (
+            title,
+            due_date,
+            description
+        )
+        VALUES
+        (
+            ?,
+            ?,
+            ?
+        )
+        """,
+        (
+            title,
+            due_date,
+            description
+        ))
+        conn.commit()
+        return redirect("/teacher_assignments")
+    return render_template("teacher_add_assignment.html")
+# ---------------- TEACHER QUIZ ---------------- #
+@app.route("/teacher_quiz")
+def teacher_quiz():
+    if "teacher" not in session:
+        return redirect("/teacher")
+    cursor.execute("SELECT * FROM quiz")
+    quizzes = cursor.fetchall()
+    return render_template(
+        "teacher_quiz.html",
+        quizzes=quizzes
+    )
+# ---------------- ADD QUIZ ---------------- #
+@app.route("/teacher_add_quiz", methods=["GET", "POST"])
+def teacher_add_quiz():
+    if "teacher" not in session:
+        return redirect("/teacher")
+    if request.method == "POST":
+        question = request.form["question"]
+        option1 = request.form["option1"]
+        option2 = request.form["option2"]
+        option3 = request.form["option3"]
+        option4 = request.form["option4"]
+        answer = request.form["answer"]
+        cursor.execute("""
+        INSERT INTO quiz
+        (
+            question,
+            option1,
+            option2,
+            option3,
+            option4,
+            answer
+        )
+        VALUES
+        (
+            ?,
+            ?,
+            ?,
+            ?,
+            ?,
+            ?
+        )
+        """,
+        (
+            question,
+            option1,
+            option2,
+            option3,
+            option4,
+            answer
+        ))
+        conn.commit()
+        return redirect("/teacher_quiz")
+    return render_template("teacher_add_quiz.html")
+# ---------------- TEACHER STUDENTS ---------------- #
+@app.route("/teacher_students")
+def teacher_students():
+    if "teacher" not in session:
+        return redirect("/teacher")
+    cursor.execute("SELECT * FROM users")
+    students = cursor.fetchall()
+    return render_template(
+        "teacher_students.html",
+        students=students
+    )
+# ---------------- SUBMITTED ASSIGNMENTS ---------------- #
+@app.route("/teacher_submissions")
+def teacher_submissions():
+    if "teacher" not in session:
+        return redirect("/teacher")
+    cursor.execute("""
+    SELECT
+        id,
+        student_name,
+        assignment_title,
+        file_name,
+        submission_date,
+        status
+    FROM submissions
+    """)
+    submissions = cursor.fetchall()
+    return render_template(
+        "teacher_submissions.html",
+        submissions=submissions
+    )
+# ---------------- QUIZ RESULTS ---------------- #
+@app.route("/teacher_quiz_results")
+def teacher_quiz_results():
+    if "teacher" not in session:
+        return redirect("/teacher")
+    cursor.execute("""
+    SELECT
+        student_name,
+        score,
+        total,
+        result
+    FROM quiz_results
+    """)
+    results = cursor.fetchall()
+    return render_template(
+        "teacher_quiz_results.html",
+        results=results
+    )
+# ---------------- DOWNLOAD ASSIGNMENT ---------------- #
+@app.route("/download/<filename>")
+def download(filename):
+    return send_from_directory(
+        app.config["UPLOAD_FOLDER"],
+        filename,
+        as_attachment=True
+    )
+# ==========================================================
+#                    ADMIN MODULE
+# ==========================================================
+# ---------------- ADMIN LOGIN ---------------- #
+@app.route("/admin", methods=["GET", "POST"])
+def admin():
+    if request.method == "POST":
+        email = request.form["email"]
+        password = request.form["password"]
+        cursor.execute("""
+        SELECT *
+        FROM admin
+        WHERE email=? AND password=?
+        """, (email, password))
+        admin = cursor.fetchone()
+        if admin:
+            session["admin"] = email
+            return redirect("/admin_dashboard")
+        return render_template(
+            "admin_login.html",
+            error="Invalid Admin Login"
+        )
+    return render_template("admin_login.html")
+# ---------------- ADMIN DASHBOARD ---------------- #
+@app.route("/admin_dashboard")
+def admin_dashboard():
+    if "admin" not in session:
+        return redirect("/admin")
+    cursor.execute("SELECT COUNT(*) FROM users")
+    total_students = cursor.fetchone()[0]
+    cursor.execute("SELECT COUNT(*) FROM teacher")
+    total_teachers = cursor.fetchone()[0]
+    cursor.execute("SELECT COUNT(*) FROM courses")
+    total_courses = cursor.fetchone()[0]
+    cursor.execute("SELECT COUNT(*) FROM assignments")
+    total_assignments = cursor.fetchone()[0]
+    cursor.execute("SELECT COUNT(*) FROM quiz")
+    total_quiz = cursor.fetchone()[0]
+    cursor.execute("SELECT COUNT(*) FROM submissions")
+    total_submissions = cursor.fetchone()[0]
+    return render_template(
+        "admin_dashboard.html",
+        total_students=total_students,
+        total_teachers=total_teachers,
+        total_courses=total_courses,
+        total_assignments=total_assignments,
+        total_quiz=total_quiz,
+        total_submissions=total_submissions
+    )
+@app.route("/marks_report")
+def marks_report():
+    cursor.execute("""
+    SELECT *
+    FROM marks
+    ORDER BY total_marks DESC
+    """)
+    data = cursor.fetchall()
+    return render_template(
+        "marks_report.html",
+        marks=data
+    )
+# ---------------- ADD COURSE ---------------- #
+@app.route("/add_course", methods=["GET", "POST"])
+def add_course():
+    if "admin" not in session:
+        return redirect("/admin")
+    if request.method == "POST":
+        title = request.form["title"]
+        instructor = request.form["instructor"]
+        duration = request.form["duration"]
+        description = request.form["description"]
+        cursor.execute("""
+        INSERT INTO courses
+        (title, instructor, duration, description)
+        VALUES (?, ?, ?, ?)
+        """,
+        (
+            title,
+            instructor,
+            duration,
+            description
+        ))
+        conn.commit()
+        return redirect("/manage_courses")
+    return render_template("add_course.html")
+# ---------------- MANAGE COURSES ---------------- #
+@app.route("/manage_courses")
+def manage_courses():
+    if "admin" not in session:
+        return redirect("/admin")
+    cursor.execute("SELECT * FROM courses")
+    courses = cursor.fetchall()
+    return render_template(
+        "manage_courses.html",
+        courses=courses
+    )
+# ---------------- EDIT COURSE ---------------- #
+@app.route("/edit_course/<int:id>", methods=["GET","POST"])
+def edit_course(id):
+    if "admin" not in session:
+        return redirect("/admin")
+    if request.method == "POST":
+        title = request.form["title"]
+        instructor = request.form["instructor"]
+        duration = request.form["duration"]
+        description = request.form["description"]
+        cursor.execute("""
+        UPDATE courses
+        SET
+            title=?,
+            instructor=?,
+            duration=?,
+            description=?
+        WHERE id=?
+        """,
+        (
+            title,
+            instructor,
+            duration,
+            description,
+            id
+        ))
+        conn.commit()
+        return redirect("/manage_courses")
+    cursor.execute(
+        "SELECT * FROM courses WHERE id=?",
+        (id,)
+    )
+    course = cursor.fetchone()
+    return render_template(
+        "edit_course.html",
+        course=course
+    )
+# ---------------- DELETE COURSE ---------------- #
+@app.route("/delete_course/<int:id>")
+def delete_course(id):
+    if "admin" not in session:
+        return redirect("/admin")
+    cursor.execute(
+        "DELETE FROM courses WHERE id=?",
+        (id,)
+    )
+    conn.commit()
+    return redirect("/manage_courses")
+# ==========================================================
+#             ADMIN - MANAGE ASSIGNMENTS
+# ==========================================================
+# ---------------- ADD ASSIGNMENT ---------------- #
+@app.route("/add_assignment", methods=["GET", "POST"])
+def add_assignment():
+    if "admin" not in session:
+        return redirect("/admin")
+    if request.method == "POST":
+        title = request.form["title"]
+        due_date = request.form["due_date"]
+        description = request.form["description"]
+        cursor.execute("""
+        INSERT INTO assignments
+        (title, due_date, description)
+        VALUES (?, ?, ?)
+        """, (title, due_date, description))
+        conn.commit()
+        return redirect("/manage_assignments")
+    return render_template("add_assignment.html")
+# ---------------- MANAGE ASSIGNMENTS ---------------- #
+@app.route("/manage_assignments")
+def manage_assignments():
+    if "admin" not in session:
+        return redirect("/admin")
+    cursor.execute("SELECT * FROM assignments")
+    assignments = cursor.fetchall()
+    return render_template(
+        "manage_assignments.html",
+        assignments=assignments
+    )
+# ---------------- EDIT ASSIGNMENT ---------------- #
+@app.route("/edit_assignment/<int:id>", methods=["GET", "POST"])
+def edit_assignment(id):
+    if "admin" not in session:
+        return redirect("/admin")
+    if request.method == "POST":
+        title = request.form["title"]
+        due_date = request.form["due_date"]
+        description = request.form["description"]
+        cursor.execute("""
+        UPDATE assignments
+        SET title=?,
+            due_date=?,
+            description=?
+        WHERE id=?
+        """, (title, due_date, description, id))
+        conn.commit()
+        return redirect("/manage_assignments")
+    cursor.execute(
+        "SELECT * FROM assignments WHERE id=?",
+        (id,)
+    )
+    assignment = cursor.fetchone()
+    return render_template(
+        "edit_assignment.html",
+        assignment=assignment
+    )
+# ---------------- DELETE ASSIGNMENT ---------------- #
+@app.route("/delete_assignment/<int:id>")
+def delete_assignment(id):
+    if "admin" not in session:
+        return redirect("/admin")
+    cursor.execute(
+        "DELETE FROM assignments WHERE id=?",
+        (id,)
+    )
+    conn.commit()
+    return redirect("/manage_assignments")
+# ==========================================================
+#                ADMIN - MANAGE QUIZ
+# ==========================================================
+# ---------------- ADD QUIZ ---------------- #
+@app.route("/add_quiz", methods=["GET", "POST"])
+def add_quiz():
+    if "admin" not in session:
+        return redirect("/admin")
+    if request.method == "POST":
+        question = request.form["question"]
+        option1 = request.form["option1"]
+        option2 = request.form["option2"]
+        option3 = request.form["option3"]
+        option4 = request.form["option4"]
+        answer = request.form["answer"]
+        cursor.execute("""
+        INSERT INTO quiz
+        (question, option1, option2, option3, option4, answer)
+        VALUES (?, ?, ?, ?, ?, ?)
+        """,
+        (
+            question,
+            option1,
+            option2,
+            option3,
+            option4,
+            answer
+        ))
+        conn.commit()
+        return redirect("/manage_quiz")
+    return render_template("add_quiz.html")
+# ---------------- MANAGE QUIZ ---------------- #
+@app.route("/manage_quiz")
+def manage_quiz():
+    if "admin" not in session:
+        return redirect("/admin")
+    cursor.execute("SELECT * FROM quiz")
+    quiz = cursor.fetchall()
+    return render_template(
+        "manage_quiz.html",
+        quiz=quiz
+    )
+# ---------------- EDIT QUIZ ---------------- #
+@app.route("/edit_quiz/<int:id>", methods=["GET", "POST"])
+def edit_quiz(id):
+    if "admin" not in session:
+        return redirect("/admin")
+    if request.method == "POST":
+        question = request.form["question"]
+        option1 = request.form["option1"]
+        option2 = request.form["option2"]
+        option3 = request.form["option3"]
+        option4 = request.form["option4"]
+        answer = request.form["answer"]
+        cursor.execute("""
+        UPDATE quiz
+        SET question=?,
+            option1=?,
+            option2=?,
+            option3=?,
+            option4=?,
+            answer=?
+        WHERE id=?
+        """,
+        (
+            question,
+            option1,
+            option2,
+            option3,
+            option4,
+            answer,
+            id
+        ))
+        conn.commit()
+        return redirect("/manage_quiz")
+    cursor.execute(
+        "SELECT * FROM quiz WHERE id=?",
+        (id,)
+    )
+    quiz = cursor.fetchone()
+    return render_template(
+        "edit_quiz.html",
+        quiz=quiz
+    )
+# ---------------- DELETE QUIZ ---------------- #
+@app.route("/delete_quiz/<int:id>")
+def delete_quiz(id):
+    if "admin" not in session:
+        return redirect("/admin")
+    cursor.execute(
+        "DELETE FROM quiz WHERE id=?",
+        (id,)
+    )
+    conn.commit()
+    return redirect("/manage_quiz")
+# ==========================================================
+#              ADMIN - MANAGE STUDENTS
+# ==========================================================
+@app.route("/manage_students")
+def manage_students():
+    if "admin" not in session:
+        return redirect("/admin")
+    cursor.execute("""
+    SELECT
+        id,
+        name,
+        email
+    FROM users
+    """)
+    students = cursor.fetchall()
+    return render_template(
+        "manage_students.html",
+        students=students
+    )
+@app.route("/delete_student/<int:id>")
+def delete_student(id):
+    if "admin" not in session:
+        return redirect("/admin")
+    cursor.execute(
+        "DELETE FROM users WHERE id=?",
+        (id,)
+    )
+    conn.commit()
+    return redirect("/manage_students")
+# ==========================================================
+#                     REPORTS
+# ==========================================================
+@app.route("/reports")
+def reports():
+    if "admin" not in session:
+        return redirect("/admin")
+    cursor.execute("SELECT COUNT(*) FROM users")
+    total_students = cursor.fetchone()[0]
+    cursor.execute("SELECT COUNT(*) FROM courses")
+    total_courses = cursor.fetchone()[0]
+    cursor.execute("SELECT COUNT(*) FROM assignments")
+    total_assignments = cursor.fetchone()[0]
+    cursor.execute("SELECT COUNT(*) FROM quiz")
+    total_quiz = cursor.fetchone()[0]
+    return render_template(
+        "reports.html",
+        total_students=total_students,
+        total_courses=total_courses,
+        total_assignments=total_assignments,
+        total_quiz=total_quiz
+    )
+# ==========================================================
+#                  CERTIFICATE DOWNLOAD
+# ==========================================================
+@app.route("/certificate")
+def certificate():
+    if "user" not in session:
+        return redirect("/student")
+    student = session["user"]
+    cursor.execute("""
+        SELECT score, total, result
+        FROM quiz_results
+        WHERE student_name=?
+        ORDER BY id DESC
+        LIMIT 1
+    """, (student,))
+    quiz = cursor.fetchone()
+    if quiz is None:
+        return "No Quiz Result Found."
+    score = quiz[0]
+    total = quiz[1]
+    result = quiz[2]
+    if result != "PASS":
+        return "Certificate is available only for PASS students."
+    today = datetime.now().strftime("%d-%m-%Y")
+    certificate_id = "LMS-" + datetime.now().strftime("%Y%m%d%H%M%S")
+    pdf = canvas.Canvas("certificate.pdf")
+    width = 595
+    height = 842
+    # Outer Border
+    pdf.setLineWidth(4)
+    pdf.rect(25, 25, width-50, height-50)
+    pdf.setLineWidth(1.5)
+    pdf.rect(35, 35, width-70, height-70)
+    # LMS Header
+    pdf.setFont("Helvetica-Bold", 24)
+    pdf.drawCentredString(
+        width/2,
+        780,
+        "ONLINE LEARNING MANAGEMENT SYSTEM"
+    )
+    pdf.setFont("Helvetica", 14)
+    pdf.drawCentredString(
+        width/2,
+        755,
+        "Certificate Verification & Achievement Portal"
+    )
+    pdf.line(80, 735, 515, 735)
+    # Certificate Title
+    pdf.setFont("Helvetica-Bold", 32)
+    pdf.drawCentredString(
+        width/2,
+        690,
+        "CERTIFICATE"
+    )
+    pdf.setFont("Helvetica-Bold", 20)
+    pdf.drawCentredString(
+        width/2,
+        660,
+        "OF COMPLETION"
+    )
+    # Certificate Text
+    pdf.setFont("Helvetica", 16)
+    pdf.drawCentredString(
+        width/2,
+        610,
+        "This Certificate is Proudly Presented To"
+    )
+    # Student Name
+    pdf.setFont("Helvetica-Bold", 30)
+    pdf.drawCentredString(
+        width/2,
+        560,
+        student
+    )
+    pdf.setFont("Helvetica", 16)
+    pdf.drawCentredString(
+        width/2,
+        510,
+        "For Successfully Completing"
+    )
+    # Course Name
+    pdf.setFont("Helvetica-Bold", 20)
+    pdf.drawCentredString(
+        width/2,
+        480,
+        "Python Programming"
+    )
+    # Quiz Result
+    pdf.setFont("Helvetica-Bold", 18)
+    pdf.drawCentredString(
+        width/2,
+        430,
+        f"Quiz Score : {score} / {total}"
+    )
+    pdf.drawCentredString(
+        width/2,
+        400,
+        "Result : PASS"
+    )
+    # Appreciation Message
+    pdf.setFont("Helvetica", 13)
+    pdf.drawCentredString(
+        width/2,
+        350,
+        "Your dedication, hard work and commitment"
+    )
+    pdf.drawCentredString(
+        width/2,
+        330,
+        "towards learning are truly appreciated."
+    )
+    pdf.drawCentredString(
+        width/2,
+        310,
+        "We congratulate you on successfully"
+    )
+    pdf.drawCentredString(
+        width/2,
+        290,
+        "completing this course."
+    )
+    pdf.line(120, 260, 475, 260)
+    # Certificate Details
+    pdf.setFont("Helvetica", 12)
+    pdf.drawCentredString(
+        width/2,
+        225,
+        f"Certificate ID : {certificate_id}"
+    )
+    pdf.drawCentredString(
+        width/2,
+        205,
+        f"Issue Date : {today}"
+    )
+    # Signatures
+    pdf.line(80, 140, 220, 140)
+    pdf.line(375, 140, 515, 140)
+    pdf.setFont("Helvetica-Bold", 12)
+    pdf.drawCentredString(
+        150,
+        120,
+        "Instructor"
+    )
+    pdf.drawCentredString(
+        445,
+        120,
+        "LMS Administrator"
+    )
+    # Footer
+    pdf.setFont("Helvetica-Oblique", 10)
+    pdf.drawCentredString(
+        width/2,
+        70,
+        "This certificate is computer generated and does not require a physical signature."
+    )
+    pdf.save()
+    return send_file(
+        "certificate.pdf",
+        as_attachment=True,
+        download_name="Certificate.pdf"
+    )
+@app.route("/leave_apply", methods=["GET","POST"])
+def leave_apply():
+    if request.method == "POST":
+        leave_type = request.form["leave_type"]
+        reason = request.form["reason"]
+        from_date = request.form["from_date"]
+        to_date = request.form["to_date"]
+        student_name = session["user"]
+        cursor.execute("""
+        INSERT INTO leave_requests(
+        student_name,
+        leave_type,
+        reason,
+        from_date,
+        to_date
+        )
+        VALUES(?,?,?,?,?)
+        """,(
+            student_name,
+            leave_type,
+            reason,
+            from_date,
+            to_date
+        ))
+        conn.commit()
+        return redirect("/dashboard")
+    return render_template("leave_apply.html")
+@app.route("/leave_status")
+def leave_status():
+    student_name = session["user"]
+    cursor.execute("""
+    SELECT *
+    FROM leave_requests
+    WHERE student_name=?
+    """,(student_name,))
+    leaves = cursor.fetchall()
+    return render_template(
+        "leave_status.html",
+        leaves=leaves
+    )
+@app.route("/teacher_leave")
+def teacher_leave():
+    cursor.execute("SELECT * FROM leave_requests")
+    leaves = cursor.fetchall()
+    return render_template(
+        "teacher_leave.html",
+        leaves=leaves
+    )
+@app.route("/approve_leave/<int:id>")
+def approve_leave(id):
+    cursor.execute("""
+    UPDATE leave_requests
+    SET status='Approved'
+    WHERE id=?
+    """,(id,))
+    conn.commit()
+    return redirect("/teacher_leave")
+@app.route("/reject_leave/<int:id>")
+def reject_leave(id):
+    cursor.execute("""
+    UPDATE leave_requests
+    SET status='Rejected'
+    WHERE id=?
+    """,(id,))
+    conn.commit()
+    return redirect("/teacher_leave")
+@app.route("/add_notification", methods=["GET","POST"])
+def add_notification():
+    if request.method == "POST":
+        title = request.form["title"]
+        message = request.form["message"]
+        cursor.execute("""
+        INSERT INTO notifications
+        (title,message,created_at)
+        VALUES(?,?,DATE('now'))
+        """,(title,message))
+        conn.commit()
+        return "Notification Added Successfully"
+    return render_template(
+        "add_notification.html"
+    )
+@app.route("/notifications")
+def notifications():
+    cursor.execute("""
+    SELECT *
+    FROM notifications
+    ORDER BY id DESC
+    """)
+    notifications = cursor.fetchall()
+    return render_template(
+        "notifications.html",
+        notifications=notifications
+    )
+@app.route("/progress")
+def progress():
+    student_name = session["user"]
+    cursor.execute("""
+    SELECT *
+    FROM student_progress
+    WHERE student_name=?
+    """,(student_name,))
+    progress = cursor.fetchone()
+    return render_template(
+        "progress.html",
+        progress=progress
+    )
+@app.route("/add_progress", methods=["GET","POST"])
+def add_progress():
+    if request.method == "POST":
+        student_name = request.form["student_name"]
+        assignments_completed = request.form["assignments_completed"]
+        total_assignments = request.form["total_assignments"]
+        attendance_percentage = request.form["attendance_percentage"]
+        quiz_score = request.form["quiz_score"]
+        performance = request.form["performance"]
+        cursor.execute("""
+        INSERT INTO student_progress
+        (
+        student_name,
+        assignments_completed,
+        total_assignments,
+        attendance_percentage,
+        quiz_score,
+        performance
+        )
+        VALUES(?,?,?,?,?,?)
+        """,(
+            student_name,
+            assignments_completed,
+            total_assignments,
+            attendance_percentage,
+            quiz_score,
+            performance
+        ))
+        conn.commit()
+        return "Progress Added Successfully"
+    return render_template("add_progress.html")
+@app.route("/add_event", methods=["GET","POST"])
+def add_event():
+    if request.method == "POST":
+        event_name = request.form["event_name"]
+        event_date = request.form["event_date"]
+        description = request.form["description"]
+        cursor.execute("""
+        INSERT INTO academic_calendar
+        (event_name,event_date,description)
+        VALUES(?,?,?)
+        """,(
+            event_name,
+            event_date,
+            description
+        ))
+        conn.commit()
+        return "Event Added Successfully"
+    return render_template("add_event.html")
+@app.route("/academic_calendar")
+def academic_calendar():
+    cursor.execute("""
+    SELECT *
+    FROM academic_calendar
+    ORDER BY event_date ASC
+    """)
+    events = cursor.fetchall()
+    return render_template(
+        "academic_calendar.html",
+        events=events
+    )
+@app.route("/feedback", methods=["GET","POST"])
+def feedback():
+    if request.method == "POST":
+        student_name = session["user"]
+        course_name = request.form["course_name"]
+        rating = request.form["rating"]
+        feedback_text = request.form["feedback"]
+        cursor.execute("""
+        INSERT INTO feedback
+        (student_name,course_name,rating,feedback)
+        VALUES(?,?,?,?)
+        """,(
+            student_name,
+            course_name,
+            rating,
+            feedback_text
+        ))
+        conn.commit()
+        return "Feedback Submitted Successfully"
+    return render_template("feedback.html")
+# ==========================================================
+#                       LOGOUT
+# ==========================================================
+@app.route("/logout")
+def logout():
+    session.pop("user", None)
+    session.pop("teacher", None)
+    session.pop("admin", None)
+    return redirect("/")
+# ==========================================================
+#                      RUN APPLICATION
+# ==========================================================
+if __name__ == "__main__":
+    app.run(
+        debug=True
+    )
